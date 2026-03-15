@@ -1,0 +1,20 @@
+#A magic number
+#Range: > 0
+magicNumber = 42
+#A list of items to log on common setup.
+items = ["minecraft:iron_ingot"]
+#GlowInTheDarkClover默认命名的武器标签名称
+mod_weapon_creative_name = "GITDC武器"
+#火焰权杖的最大使用时间
+fire_launcher_item_max_use_time = 36000
+#设置火焰泥土的烟雾和火焰粒子特效生成最大高度。默认值为3
+fire_dirt_block_effect_max_height = 3
+#设置火焰泥土的火焰粒子特效生成几率。数值范围为0到10.默认值为6.值越大生成几率越小
+fire_dirt_block_flame_summon_chance = 6
+#设置火焰泥土的粒子特效垂直运动速率。默认值为0.1
+fire_dirt_block_effect_speed = 0.1
+#设置玩家受火焰泥土debuff的影响时间。默认值为10s
+fire_dirt_block_self_burn_effect_time = 10
+#设置任意传送门的粒子特效高度和生成半径。高度默认为0.5，半径默认为2,粒子密集程度值默认为32
+teleport_scheduler_parameters = [0.5, 2.0, 16.0]
+

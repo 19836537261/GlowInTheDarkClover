@@ -1,0 +1,17 @@
+{
+  "advancement.fire_world_root.desc": "使用黑曜石、附魔台、烈焰棒、下界之星、末影之眼、龙息合成任意传送门。",
+  "advancement.fire_world_root.title": "由此开启了异世界的冒险故事",
+  "advancement.root.desc": "使用烈焰粉和纸合成火焰令牌。",
+  "advancement.root.title": "浴火焚身",
+  "block.fire_dirt_block.tooltip": "看起来是岩浆和草方块的结合体。。。",
+  "block.glow_in_the_dark_clover.fire_dirt_block": "火焰泥土",
+  "block.glow_in_the_dark_clover.teleport_scheduler_block": "任意传送门",
+  "block.teleport_scheduler_block.tooltip": "可以使用该令牌去激活任意传送门",
+  "creative_tab.block": "GITDC方块",
+  "creative_tab.item": "GITDC物品",
+  "creative_tab.weapon": "GITDC武器",
+  "item.fire_launcher.tooltip": "点击鼠标右键即可发射火焰",
+  "item.fire_world_token.tooltip": "使用该物品去激活火焰世界维度吧",
+  "item.glow_in_the_dark_clover.fire_launcher": "火焰权杖",
+  "item.glow_in_the_dark_clover.fire_world_token": "火焰令牌"
+}

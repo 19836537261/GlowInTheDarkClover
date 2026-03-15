@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "glow_in_the_dark_clover:block/fire_dirt_block_bottom",
+    "side": "glow_in_the_dark_clover:block/fire_dirt_block_side",
+    "top": "glow_in_the_dark_clover:block/fire_dirt_block_top"
+  }
+}

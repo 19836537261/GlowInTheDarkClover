@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "glow_in_the_dark_clover:teleport_scheduler_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "glow_in_the_dark_clover:blocks/teleport_scheduler_block"
+}
