@@ -1,0 +1,5 @@
+// 1.20.1	2026-03-14T22:12:03.9576924	Block States: glow_in_the_dark_clover
+424ddd388299f524e10fad204d01711c1a9fd18d assets/glow_in_the_dark_clover/blockstates/fire_dirt_block.json
+2cc1c8feeb6919e1ea46a9f2cbab155f39c18f4b assets/glow_in_the_dark_clover/blockstates/teleport_scheduler_block.json
+3924a802b427907c89ae3de3c1d9f73c6d4605f8 assets/glow_in_the_dark_clover/models/block/fire_dirt_block.json
+9ab96375ac8432fd136643eb634c040d44892a46 assets/glow_in_the_dark_clover/models/block/teleport_scheduler_block.json
