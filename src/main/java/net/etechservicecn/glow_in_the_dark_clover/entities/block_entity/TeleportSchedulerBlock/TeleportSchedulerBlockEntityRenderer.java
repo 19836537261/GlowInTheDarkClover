@@ -1,20 +1,12 @@
-package net.etechservicecn.glow_in_the_dark_clover.entities.block_entity;
+package net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
-import org.joml.Vector2f;
-import org.joml.Vector3f;
 
 public class TeleportSchedulerBlockEntityRenderer implements BlockEntityRenderer<TeleportSchedulerBlockEntity> {
     public TeleportSchedulerBlockEntityRenderer(){
@@ -109,7 +101,4 @@ public class TeleportSchedulerBlockEntityRenderer implements BlockEntityRenderer
                 .uv2(packedLight)
                 .normal(poseStack.last().normal(),dat[5],dat[6],dat[7]).endVertex();
     }
-    
-
-
 }

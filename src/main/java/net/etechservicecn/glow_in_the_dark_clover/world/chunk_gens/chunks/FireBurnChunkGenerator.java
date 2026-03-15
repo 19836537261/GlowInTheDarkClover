@@ -83,7 +83,7 @@ public class FireBurnChunkGenerator extends ChunkGenerator {
                         if (i>minY&&i<=base_height){
                             fill_sketeon(chunkAccess,worldx,i,worldz,base_height);
                         } else if (i>base_height&&i<=sea_level) {
-                            chunkAccess.setBlockState(new BlockPos(worldx,i,worldz),Blocks.WATER.defaultBlockState(), false);
+                            chunkAccess.setBlockState(new BlockPos(worldx,i,worldz),Blocks.LAVA.defaultBlockState(), false);
                         } else {
                             chunkAccess.setBlockState(new BlockPos(worldx,i,worldz),Blocks.AIR.defaultBlockState(), false);
                         }

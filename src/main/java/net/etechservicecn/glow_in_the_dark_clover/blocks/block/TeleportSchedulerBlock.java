@@ -1,10 +1,9 @@
 package net.etechservicecn.glow_in_the_dark_clover.blocks.block;
 
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
-import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlockEntity;
+import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntity;
 import net.etechservicecn.glow_in_the_dark_clover.events.ModConfigEvent;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
@@ -25,7 +24,7 @@ import java.util.List;
 
 public class TeleportSchedulerBlock extends Block implements EntityBlock {
     public TeleportSchedulerBlock(Properties p_49795_) {
-        super(p_49795_.randomTicks());
+        super(p_49795_.randomTicks().lightLevel((p)->{return 10;}));
     }
 
     @Nullable

@@ -2,8 +2,8 @@ package net.etechservicecn.glow_in_the_dark_clover.events;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
-import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlockEntity;
-import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlockEntityRenderer;
+import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntity;
+import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraftforge.api.distmarker.Dist;

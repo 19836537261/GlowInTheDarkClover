@@ -1,4 +1,4 @@
-package net.etechservicecn.glow_in_the_dark_clover.entities.block_entity;
+package net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock;
 
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
 import net.minecraft.core.BlockPos;
