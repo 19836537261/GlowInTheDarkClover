@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class TeleportBlock extends Block implements EntityBlock {
     public TeleportBlock(Properties p_49795_) {
-        super(p_49795_.lightLevel(p->{return 15;}).noCollission());
+        super(p_49795_.lightLevel(p->{return 15;}).noCollission().noLootTable());
     }
 
     @Nullable

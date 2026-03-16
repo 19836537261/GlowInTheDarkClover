@@ -1,6 +1,7 @@
 package net.etechservicecn.glow_in_the_dark_clover.datagen;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
@@ -31,6 +32,7 @@ public class ModAdvancementGenerator implements ForgeAdvancementProvider.Advance
                         FrameType.GOAL,true,true,false)
                 .addCriterion("get_teleporter",InventoryChangeTrigger.TriggerInstance.hasItems(ItemList.TELEPORT_SCHEDULER_BLOCK_ITEM.get()))
                 .save(advancementConsumer,"root");
+
         Advancement fire_world_advancement_goals=Advancement.Builder.advancement()
                 .display(new ItemStack(ItemList.FIRE_WORLD_TOKEN.get()),
                         Component.translatable("advancement.root.title"),
@@ -40,5 +42,7 @@ public class ModAdvancementGenerator implements ForgeAdvancementProvider.Advance
                 .addCriterion("get_fire_world_token", InventoryChangeTrigger.TriggerInstance.hasItems(ItemList.FIRE_WORLD_TOKEN.get()))
                 .parent(root)
                 .save(advancementConsumer,"fire_world_root");
+//        Advancement fire_world_entrance_advancement_goal=Advancement.Builder.advancement()
+//                .display(new ItemStack(BlockList.))
     }
 }

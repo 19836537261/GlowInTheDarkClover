@@ -21,7 +21,6 @@ public class ItemModelDataGenerator extends ItemModelProvider {
     protected void registerModels() {
         registerItem(ItemList.FIRE_LAUNCHER);
         registerItem(ItemList.FIRE_WORLD_TOKEN);
-
         registerBlockItem(ItemList.FIRE_DIRT_BLOCK_ITEM);
         registerBlockItem(ItemList.TELEPORT_SCHEDULER_BLOCK_ITEM);
 

@@ -18,6 +18,7 @@ public class BlockStateDataGenerator extends BlockStateProvider {
     protected void registerStatesAndModels() {
         this.buildTopSideBottomBlock(BlockList.FIRE_DIRT_BLOCK);
         this.buildTopSideBottomBlock(BlockList.TELEPORT_SCHEDULER_BLOCK);
+        this.buildOnePatternBlock(BlockList.TELEPORT_BLOCK);
     }
     private void buildTopSideBottomBlock(RegistryObject<? extends Block>block){
         simpleBlock(block.get(),models().cubeBottomTop(
@@ -25,6 +26,9 @@ public class BlockStateDataGenerator extends BlockStateProvider {
                 modLoc("block/"+block.getId().getPath()+"_side"),
                 modLoc("block/"+block.getId().getPath()+"_bottom"),
                 modLoc("block/"+block.getId().getPath()+"_top")));
+    }
+    private void buildOnePatternBlock(RegistryObject<? extends Block>block){
+        simpleBlock(block.get(),models().cubeAll(block.getId().getPath(),modLoc("block/"+block.getId().getPath())));
     }
     private void buildMulVariantBlock(RegistryObject<? extends Block>block){
         simpleBlock(block.get(),models().cube(block.getId().getPath(),
