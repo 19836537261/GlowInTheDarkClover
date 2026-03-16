@@ -1,10 +1,12 @@
 package net.etechservicecn.glow_in_the_dark_clover.blocks.block;
 
+import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportBlock.TeleportBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -13,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class TeleportBlock extends Block implements EntityBlock {
     public TeleportBlock(Properties p_49795_) {
-        super(p_49795_);
+        super(p_49795_.lightLevel(p->{return 15;}).noCollission());
     }
 
     @Nullable
@@ -24,7 +26,21 @@ public class TeleportBlock extends Block implements EntityBlock {
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_153212_, BlockState p_153213_, BlockEntityType<T> p_153214_) {
-        return EntityBlock.super.getTicker(p_153212_, p_153213_, p_153214_);
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> blockEntityType) {
+        if (blockEntityType== BlockEntityTypeList.TELEPORT_BLOCK_ENTITY_TYPE.get()){
+            return ((level1, blockPos, blockState1, blockEntity) -> {
+                if (level1.isClientSide()){
+                    if (blockEntity instanceof TeleportBlockEntity teleportBlockEntity){
+                        teleportBlockEntity.calculate_counter();
+                    }
+                }
+            });
+        }
+        return null;
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState p_60550_) {
+        return RenderShape.INVISIBLE;
     }
 }

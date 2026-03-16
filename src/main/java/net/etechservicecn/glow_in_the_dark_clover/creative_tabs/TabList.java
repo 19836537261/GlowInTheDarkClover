@@ -7,6 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,6 +30,16 @@ public class TabList {
             .icon(()->new ItemStack(ItemList.FIRE_WORLD_TOKEN.get()))
             .title(Component.translatable("creative_tab.item")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(ItemList.FIRE_WORLD_TOKEN.get());
+            })).build());
+
+
+
+
+    public static final RegistryObject<CreativeModeTab>DEV_TAB=TABS.register("dev_tab",()-> CreativeModeTab.builder()
+            .icon(()->new ItemStack(Blocks.STRUCTURE_BLOCK))
+            .title(Component.literal("Dev Tab"))
+            .displayItems(((p_270258_, p_259752_) -> {
+                p_259752_.accept(ItemList.TELEPORT_BLOCK_ITEM.get());
             })).build());
     public static void register(IEventBus bus){
         TABS.register(bus);

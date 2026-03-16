@@ -60,7 +60,7 @@ public class OnMouseRightClickEvent {
             BlockPos start_fill_pos=north.above(1);
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    level.setBlock(start_fill_pos.south(i).above(j),Blocks.DIRT.defaultBlockState(), Block.UPDATE_NEIGHBORS|Block.UPDATE_CLIENTS);
+                    level.setBlock(start_fill_pos.south(i).above(j),BlockList.TELEPORT_BLOCK.get().defaultBlockState(), Block.UPDATE_NEIGHBORS|Block.UPDATE_CLIENTS);
                 }
             }
         }else {
@@ -90,7 +90,7 @@ public class OnMouseRightClickEvent {
                 BlockPos start_fill_pos=east.above(1);
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
-                        level.setBlock(start_fill_pos.west(i).above(j),Blocks.DIRT.defaultBlockState(), Block.UPDATE_NEIGHBORS|Block.UPDATE_CLIENTS);
+                        level.setBlock(start_fill_pos.west(i).above(j),BlockList.TELEPORT_BLOCK.get().defaultBlockState(), Block.UPDATE_NEIGHBORS|Block.UPDATE_CLIENTS);
                     }
                 }
             }

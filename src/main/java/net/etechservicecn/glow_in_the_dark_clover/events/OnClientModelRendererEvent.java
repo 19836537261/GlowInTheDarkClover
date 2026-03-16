@@ -2,6 +2,8 @@ package net.etechservicecn.glow_in_the_dark_clover.events;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
+import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportBlock.TeleportBlockEntity;
+import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportBlock.TeleportBlockEntityRender;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntity;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -19,6 +21,12 @@ public class OnClientModelRendererEvent {
             @Override
             public BlockEntityRenderer<TeleportSchedulerBlockEntity> create(Context p_173571_) {
                 return new TeleportSchedulerBlockEntityRenderer();
+            }
+        });
+        event.registerBlockEntityRenderer(BlockEntityTypeList.TELEPORT_BLOCK_ENTITY_TYPE.get(), new BlockEntityRendererProvider<TeleportBlockEntity>() {
+            @Override
+            public BlockEntityRenderer<TeleportBlockEntity> create(Context p_173571_) {
+                return new TeleportBlockEntityRender();
             }
         });
     }

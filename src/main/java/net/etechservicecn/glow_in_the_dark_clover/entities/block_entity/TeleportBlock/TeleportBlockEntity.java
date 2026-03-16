@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class TeleportBlockEntity extends BlockEntity {
-    private int rotate_index;
-    private String world_type;
+    private int rotate_index=0;
+    private String world_type="";
     public TeleportBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
         super(BlockEntityTypeList.TELEPORT_BLOCK_ENTITY_TYPE.get(), p_155229_, p_155230_);
     }
@@ -71,7 +71,16 @@ public class TeleportBlockEntity extends BlockEntity {
             level.sendBlockUpdated(worldPosition,blockState,blockState,3);
         }
     }
-
+    private int counter=0;
+    public void calculate_counter(){
+        if (counter%10==0&&counter!=0){
+            counter=0;
+            this.setRotate_index();
+        }
+        else {
+            counter++;
+        }
+    }
     public void setRotate_index() {
         this.rotate_index = (rotate_index+1)%4;
         this.setChanged();
