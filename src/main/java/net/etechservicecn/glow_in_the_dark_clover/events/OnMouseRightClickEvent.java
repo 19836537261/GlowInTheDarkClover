@@ -23,16 +23,16 @@ import net.minecraftforge.fml.common.Mod;
 public class OnMouseRightClickEvent {
     @SubscribeEvent
     public static void when_player_right_click(PlayerInteractEvent.RightClickBlock event){
-        Level level=event.getLevel();
-        Player player=event.getEntity();
-        ItemStack itemStack=player.getItemInHand(event.getHand());
-        BlockPos blockPos=event.getPos();
-        BlockState blockState=level.getBlockState(blockPos);
-        if (itemStack.is(ItemList.FIRE_WORLD_TOKEN.get())&&blockState.is(BlockList.TELEPORT_SCHEDULER_BLOCK.get())){
-            fill_north_south_block(level,blockPos,itemStack,player);
-        }
+//        Level level=event.getLevel();
+//        Player player=event.getEntity();
+//        ItemStack itemStack=player.getItemInHand(event.getHand());
+//        BlockPos blockPos=event.getPos();
+//        BlockState blockState=level.getBlockState(blockPos);
+//        if (itemStack.is(ItemList.FIRE_WORLD_TOKEN.get())&&blockState.is(BlockList.TELEPORT_SCHEDULER_BLOCK.get())){
+//            fill_north_south_block(level,blockPos,itemStack,player);
+//        }
     }
-    private static void fill_north_south_block(Level level,BlockPos blockPos,ItemStack itemStack,Player player){
+    public static void fill_blocks(Level level,BlockPos blockPos,ItemStack itemStack,Player player){
         BlockPos north=blockPos.north(1);
         BlockPos north_pillar=north.north(1).above(1);
         BlockPos south=blockPos.south(1);

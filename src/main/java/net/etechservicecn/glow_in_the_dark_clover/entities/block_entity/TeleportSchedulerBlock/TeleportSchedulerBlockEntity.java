@@ -18,15 +18,27 @@ public class TeleportSchedulerBlockEntity extends BlockEntity {
     private int circle_index3=3;
 
     public static final int TEXTURE_COUNT=8;
+    private boolean is_active=false;
 
     public TeleportSchedulerBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(BlockEntityTypeList.TELEPORT_SCHEDULER_ENTITY_TYPE.get(), blockPos,blockState);
     }
     private int counter=0;
-    public void calculate_counter() {
+    public void calculate_counter(boolean active) {
         if (counter%10==0&&counter!=0){
-            this.setCircle_index();
-            counter=0;
+            this.is_active=active;
+            this.setChanged();
+            if (is_active){
+                this.setCircle_index();
+                counter=0;
+            }else {
+                this.circle_index = 0;
+                this.circle_index1=0;
+                this.circle_index2=0;
+                this.circle_index3=0;
+                this.setChanged();
+                counter=0;
+            }
         }else {
             counter++;
         }
@@ -39,6 +51,7 @@ public class TeleportSchedulerBlockEntity extends BlockEntity {
             this.circle_index1=tag.getInt("circle_index1");
             this.circle_index2=tag.getInt("circle_index2");
             this.circle_index3=tag.getInt("circle_index3");
+            this.is_active=tag.getBoolean("is_active");
         }
     }
 
@@ -49,6 +62,7 @@ public class TeleportSchedulerBlockEntity extends BlockEntity {
         tag.putInt("circle_index1",this.circle_index1);
         tag.putInt("circle_index2",this.circle_index2);
         tag.putInt("circle_index3",this.circle_index3);
+        tag.putBoolean("is_active",this.is_active);
     }
 
     @Override
@@ -58,6 +72,7 @@ public class TeleportSchedulerBlockEntity extends BlockEntity {
         compoundTag.putInt("circle_index1",this.circle_index1);
         compoundTag.putInt("circle_index2",this.circle_index2);
         compoundTag.putInt("circle_index3",this.circle_index3);
+        compoundTag.putBoolean("is_active",this.is_active);
         return compoundTag;
     }
 
@@ -68,6 +83,7 @@ public class TeleportSchedulerBlockEntity extends BlockEntity {
         this.circle_index1=tag.getInt("circle_index1");
         this.circle_index2=tag.getInt("circle_index2");
         this.circle_index3=tag.getInt("circle_index3");
+        this.is_active=tag.getBoolean("is_active");
     }
 
     @Nullable
@@ -97,6 +113,13 @@ public class TeleportSchedulerBlockEntity extends BlockEntity {
             BlockState blockState=this.level.getBlockState(worldPosition);
             level.sendBlockUpdated(worldPosition,blockState,blockState,3);
         }
+    }
+    public void setActive(boolean is_active) {
+        this.is_active = is_active;
+    }
+
+    public boolean IsActive() {
+        return is_active;
     }
 
     public int getCircle_index() {

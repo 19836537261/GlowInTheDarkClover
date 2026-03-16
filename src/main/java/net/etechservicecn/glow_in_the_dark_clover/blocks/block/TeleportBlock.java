@@ -2,7 +2,14 @@ package net.etechservicecn.glow_in_the_dark_clover.blocks.block;
 
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportBlock.TeleportBlockEntity;
+import net.etechservicecn.glow_in_the_dark_clover.teleporters.FireWorldTeleporter;
+import net.etechservicecn.glow_in_the_dark_clover.world.dimension.FireBurnWorld;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -42,5 +49,19 @@ public class TeleportBlock extends Block implements EntityBlock {
     @Override
     public RenderShape getRenderShape(BlockState p_60550_) {
         return RenderShape.INVISIBLE;
+    }
+    @Override
+    public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+        super.entityInside(blockState, level, blockPos, entity);
+        if (!level.isClientSide()){
+            if (entity instanceof Player player){
+                ResourceKey<Level>levelResourceKey=level.dimension()== FireBurnWorld.FIRE_BURN_LEVEL?Level.OVERWORLD:FireBurnWorld.FIRE_BURN_LEVEL;
+                MinecraftServer minecraftServer=level.getServer();
+                ServerLevel serverLevel=minecraftServer.getLevel(levelResourceKey);
+                if (serverLevel!=null&&!player.isPassenger()){
+                    player.changeDimension(serverLevel,new FireWorldTeleporter(blockPos));
+                }
+            }
+        }
     }
 }
