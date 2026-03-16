@@ -37,6 +37,7 @@ public class StartModApplication
         BlockList.register(modEventBus);
         ChunkList.register(modEventBus);
         BlockEntityTypeList.register(modEventBus);
+        //BiomeList.register();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModConfigEvent.SPEC);
@@ -80,7 +81,6 @@ public class StartModApplication
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-
         }
     }
 }

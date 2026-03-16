@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "glow_in_the_dark_clover:item/fire_launcher"
-  }
-}
