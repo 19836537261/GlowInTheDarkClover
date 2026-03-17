@@ -1,9 +1,9 @@
-package net.etechservicecn.glow_in_the_dark_clover.world.dimension;
+package net.etechservicecn.glow_in_the_dark_clover.world.dimensions;
 
 import com.mojang.datafixers.util.Pair;
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.tags.FireBurnWorldTags;
-import net.etechservicecn.glow_in_the_dark_clover.world.biomes.biome_settings.FireLandBiomeSettings;
+import net.etechservicecn.glow_in_the_dark_clover.world.biomes.biome_settings.FireLandBiomeSetting;
 import net.etechservicecn.glow_in_the_dark_clover.world.chunk_gens.chunks.FireBurnChunkGenerator;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -36,7 +36,7 @@ public class FireBurnWorld {
         context.register(FIRE_BURN_LEVEL_STEM,new LevelStem(dimensionTypeHolderGetter.getOrThrow(FIRE_BURN_WORLD_DIMENSION_TYPE),
                 new FireBurnChunkGenerator(MultiNoiseBiomeSource.createFromList(
                 new Climate.ParameterList<>(List.of(
-                        Pair.of(Climate.parameters(0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f),biomeHolderGetter.getOrThrow(FireLandBiomeSettings.FIRE_LAND_BIOME))
+                        Pair.of(Climate.parameters(0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f),biomeHolderGetter.getOrThrow(FireLandBiomeSetting.FIRE_LAND_BIOME))
                 ))
         ))));
     }

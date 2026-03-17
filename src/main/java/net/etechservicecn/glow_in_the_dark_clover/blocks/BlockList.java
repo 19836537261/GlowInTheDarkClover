@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.blocks;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FireDirtBlock;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.FlameTreeLogBlock;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.TeleportBlock;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.TeleportSchedulerBlock;
 import net.minecraft.core.registries.Registries;
@@ -20,6 +21,8 @@ public class BlockList {
             ()->new TeleportSchedulerBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
     public static final RegistryObject<TeleportBlock>TELEPORT_BLOCK=BLOCKS.register("teleport_block",
             ()->new TeleportBlock(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<FlameTreeLogBlock>FLAME_TREE_LOG_BLOCK=BLOCKS.register("flame_tree_log",
+            ()->new FlameTreeLogBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG)));
     public static void register(IEventBus bus){
         BLOCKS.register(bus);
     }

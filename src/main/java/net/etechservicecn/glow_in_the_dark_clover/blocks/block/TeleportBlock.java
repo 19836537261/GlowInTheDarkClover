@@ -3,7 +3,7 @@ package net.etechservicecn.glow_in_the_dark_clover.blocks.block;
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportBlock.TeleportBlockEntity;
 import net.etechservicecn.glow_in_the_dark_clover.teleporters.FireWorldTeleporter;
-import net.etechservicecn.glow_in_the_dark_clover.world.dimension.FireBurnWorld;
+import net.etechservicecn.glow_in_the_dark_clover.world.dimensions.FireBurnWorld;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;

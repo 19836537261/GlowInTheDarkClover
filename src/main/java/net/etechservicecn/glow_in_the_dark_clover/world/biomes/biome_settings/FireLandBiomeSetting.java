@@ -9,7 +9,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
-public class FireLandBiomeSettings {
+public class FireLandBiomeSetting {
     public static final ResourceKey<Biome>FIRE_LAND_BIOME=ResourceKey.create(Registries.BIOME,new ResourceLocation(StartModApplication.MODID,"fire_land_biome"));
     public static void bootstrap(BootstapContext<Biome>context){
         Biome.BiomeBuilder builder=new Biome.BiomeBuilder();

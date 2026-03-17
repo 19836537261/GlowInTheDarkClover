@@ -19,6 +19,14 @@ public class BlockStateDataGenerator extends BlockStateProvider {
         this.buildTopSideBottomBlock(BlockList.FIRE_DIRT_BLOCK);
         this.buildTopSideBottomBlock(BlockList.TELEPORT_SCHEDULER_BLOCK);
         this.buildOnePatternBlock(BlockList.TELEPORT_BLOCK);
+        this.buildTopSideBlock(BlockList.FLAME_TREE_LOG_BLOCK);
+    }
+    private void buildTopSideBlock(RegistryObject<? extends Block>block){
+        simpleBlock(block.get(),models().cubeBottomTop(
+                block.getId().getPath(),
+                modLoc("block/"+block.getId().getPath()+"_side"),
+                modLoc("block/"+block.getId().getPath()+"_tb"),
+                modLoc("block/"+block.getId().getPath()+"_tb")));
     }
     private void buildTopSideBottomBlock(RegistryObject<? extends Block>block){
         simpleBlock(block.get(),models().cubeBottomTop(

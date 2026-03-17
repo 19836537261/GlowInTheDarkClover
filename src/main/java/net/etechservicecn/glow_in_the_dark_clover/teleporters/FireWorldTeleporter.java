@@ -2,7 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.teleporters;
 
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
 import net.etechservicecn.glow_in_the_dark_clover.world.chunk_gens.chunks.FireBurnChunkGenerator;
-import net.etechservicecn.glow_in_the_dark_clover.world.dimension.FireBurnWorld;
+import net.etechservicecn.glow_in_the_dark_clover.world.dimensions.FireBurnWorld;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

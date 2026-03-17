@@ -23,5 +23,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider p_256380_) {
         this.tag(ItemTags.HOES)
                 .add(BlockList.FIRE_DIRT_BLOCK.get().asItem());
+//        this.tag(ItemTags.AXES)
+//                .add(BlockList.FLAME_TREE_LOG_BLOCK.get().asItem());
     }
 }

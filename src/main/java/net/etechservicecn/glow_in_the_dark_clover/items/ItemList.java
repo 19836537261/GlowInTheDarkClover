@@ -18,6 +18,7 @@ public class ItemList {
     public static final RegistryObject<Item>FIRE_WORLD_TOKEN=ITEMS.register("fire_world_token",()->new FireWorldTokenItem(new Item.Properties()));
     public static final RegistryObject<Item>TELEPORT_SCHEDULER_BLOCK_ITEM=ITEMS.register("teleport_scheduler_block",()->new BlockItem(BlockList.TELEPORT_SCHEDULER_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item>TELEPORT_BLOCK_ITEM=ITEMS.register("teleport_block_item",()->new BlockItem(BlockList.TELEPORT_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item>FLAME_TREE_LOG_BLOCK_ITEM=ITEMS.register("flame_tree_log",()->new BlockItem(BlockList.FLAME_TREE_LOG_BLOCK.get(),new Item.Properties()));
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }

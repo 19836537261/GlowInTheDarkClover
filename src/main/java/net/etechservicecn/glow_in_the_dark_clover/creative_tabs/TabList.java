@@ -25,6 +25,7 @@ public class TabList {
             .title(Component.translatable("creative_tab.block")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(BlockList.FIRE_DIRT_BLOCK.get());
                 p_259752_.accept(BlockList.TELEPORT_SCHEDULER_BLOCK.get());
+                p_259752_.accept(BlockList.FLAME_TREE_LOG_BLOCK.get());
             })).build());
     public static final RegistryObject<CreativeModeTab>ITEM_TAB=TABS.register("item_tab",()-> CreativeModeTab.builder()
             .icon(()->new ItemStack(ItemList.FIRE_WORLD_TOKEN.get()))
