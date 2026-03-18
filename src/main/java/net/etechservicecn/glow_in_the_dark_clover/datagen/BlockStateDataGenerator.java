@@ -20,6 +20,7 @@ public class BlockStateDataGenerator extends BlockStateProvider {
         this.buildTopSideBottomBlock(BlockList.TELEPORT_SCHEDULER_BLOCK);
         this.buildOnePatternBlock(BlockList.TELEPORT_BLOCK);
         this.buildTopSideBlock(BlockList.FLAME_TREE_LOG_BLOCK);
+        this.buildOnePatternBlock(BlockList.FLAME_TREE_LEAVES_BLOCK);
     }
     private void buildTopSideBlock(RegistryObject<? extends Block>block){
         simpleBlock(block.get(),models().cubeBottomTop(

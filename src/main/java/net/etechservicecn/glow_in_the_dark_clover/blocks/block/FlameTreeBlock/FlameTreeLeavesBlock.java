@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FlameTreeLeavesBlock extends LeavesBlock {
     public FlameTreeLeavesBlock(Properties p_54422_) {
-        super(p_54422_);
+        super(p_54422_.strength(10.0f));
     }
 
     @Override

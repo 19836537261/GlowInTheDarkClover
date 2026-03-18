@@ -34,6 +34,8 @@ public class LootTableGenerator extends LootTableProvider {
             this.dropSelf(BlockList.FIRE_DIRT_BLOCK.get());
             this.dropSelf(BlockList.TELEPORT_SCHEDULER_BLOCK.get());
             this.dropSelf(BlockList.FLAME_TREE_LOG_BLOCK.get());
+//            this.createLeavesDrops(BlockList.FLAME_TREE_LEAVES_BLOCK.get(),)
+            this.dropSelf(BlockList.FLAME_TREE_LEAVES_BLOCK.get());
         }
 
         @Override

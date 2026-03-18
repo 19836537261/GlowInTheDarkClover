@@ -7,6 +7,8 @@ import net.etechservicecn.glow_in_the_dark_clover.events.ModConfigEvent;
 import net.etechservicecn.glow_in_the_dark_clover.creative_tabs.TabList;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.etechservicecn.glow_in_the_dark_clover.world.chunk_gens.ChunkList;
+import net.etechservicecn.glow_in_the_dark_clover.world.trees.FoliagePlacerList;
+import net.etechservicecn.glow_in_the_dark_clover.world.trees.TrunkPlacerList;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,6 +39,8 @@ public class StartModApplication
         BlockList.register(modEventBus);
         ChunkList.register(modEventBus);
         BlockEntityTypeList.register(modEventBus);
+        TrunkPlacerList.register(modEventBus);
+        FoliagePlacerList.register(modEventBus);
         //BiomeList.register();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

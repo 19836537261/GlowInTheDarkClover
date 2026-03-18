@@ -24,6 +24,7 @@ public class ItemModelDataGenerator extends ItemModelProvider {
         registerBlockItem(ItemList.FIRE_DIRT_BLOCK_ITEM);
         registerBlockItem(ItemList.TELEPORT_SCHEDULER_BLOCK_ITEM);
         registerBlockItem(ItemList.FLAME_TREE_LOG_BLOCK_ITEM);
+        registerBlockItem(ItemList.FLAME_TREE_LEAVES_BLOCK_ITEM);
 
     }
     private void registerItem(RegistryObject<Item>itemRegistryObject){
