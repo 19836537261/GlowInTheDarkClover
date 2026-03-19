@@ -37,7 +37,8 @@ public class FireBurnChunkGenerator extends ChunkGenerator {
     public static final Integer min_terrain_height=16;
     public static final Integer max_terrain_height=196;
 
-    public static final Double base_noise_scale = 0.5;
+    public static final Double base_noise_scale = 0.3;
+    public static final Double ridge_noise_scale=0.07;
     public static final Codec<FireBurnChunkGenerator>CODEC= RecordCodecBuilder.create(inst->inst.group(
             BiomeSource.CODEC.fieldOf("biomeSource")
                     .forGetter(FireBurnChunkGenerator::getBiomeSource)).apply(inst,FireBurnChunkGenerator::new));
@@ -115,9 +116,14 @@ public class FireBurnChunkGenerator extends ChunkGenerator {
     }
 
     private double calculateNoiseHeight(int x,int y,int z,RandomState randomState){
-        NormalNoise baseNoise=randomState.getOrCreateNoise(Noises.CONTINENTALNESS);
+        NormalNoise baseNoise=randomState.getOrCreateNoise(Noises.AQUIFER_BARRIER);
+        NormalNoise ridgeNoise=randomState.getOrCreateNoise(Noises.RIDGE);
         double base_noise_value=baseNoise.getValue(x*base_noise_scale,y,z*base_noise_scale);
+        double ridge_noise_value=ridgeNoise.getValue(x*ridge_noise_scale,y,z*ridge_noise_scale);
         double summon_height_rate=(base_noise_value+1)/2;
+//        if (ridge_noise_value>0.6){
+//            summon_height_rate=(summon_height_rate+ridge_noise_value)/2;
+//        }
         return minY+(max_terrain_height-min_terrain_height)*summon_height_rate;
     }
 

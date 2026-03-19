@@ -17,7 +17,13 @@ public class BiomeModifiers {
     public static void bootstrap(BootstapContext<BiomeModifier>context){
         var biomes=context.lookup(Registries.BIOME);
         var features=context.lookup(Registries.PLACED_FEATURE);
-        context.register(FLAME_TREE_BIOME_MODIFIER,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(FireLandBiomeSetting.FIRE_LAND_BIOME)),HolderSet.direct(features.getOrThrow(PlacedFeatures.FLAME_TREE_PLACE_FEATURE)), GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(FLAME_TREE_BIOME_MODIFIER,
+                new ForgeBiomeModifiers
+                        .AddFeaturesBiomeModifier(
+                                HolderSet.direct(
+                                        biomes.getOrThrow(FireLandBiomeSetting.FIRE_LAND_BIOME)),
+                        HolderSet.direct(features.getOrThrow(PlacedFeatures.FLAME_TREE_PLACE_FEATURE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
     }
     public static ResourceKey<BiomeModifier> createKey(String name){
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS,new ResourceLocation(StartModApplication.MODID,name));

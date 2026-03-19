@@ -15,7 +15,8 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature>FLAME_TREE_PLACE_FEATURE=createKey("flame_tree_place_feature");
     public static void bootstrap(BootstapContext<PlacedFeature>context){
         var configuration=context.lookup(Registries.CONFIGURED_FEATURE);
-        context.register(FLAME_TREE_PLACE_FEATURE,new PlacedFeature(configuration.getOrThrow(ConfigurationFeatures.FLAME_TREE_FEATURE), VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.2f,2))));
+        context.register(FLAME_TREE_PLACE_FEATURE,new PlacedFeature(configuration.getOrThrow(ConfigurationFeatures.FLAME_TREE_FEATURE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10,0.1f,3))));
     }
     private static ResourceKey<PlacedFeature> createKey(String name){
         return ResourceKey.create(Registries.PLACED_FEATURE,new ResourceLocation(StartModApplication.MODID,name));

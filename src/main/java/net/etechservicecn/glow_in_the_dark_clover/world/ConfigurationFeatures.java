@@ -21,10 +21,10 @@ public class ConfigurationFeatures {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>>context){
         context.register(FLAME_TREE_FEATURE,new ConfiguredFeature<>(Feature.TREE,new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(BlockList.FLAME_TREE_LOG_BLOCK.get()),
-                new FlameTreeTrunkPlacer(4,1,8),
+                new FlameTreeTrunkPlacer(4,0,1),
                 BlockStateProvider.simple(BlockList.FLAME_TREE_LEAVES_BLOCK.get()),
-                new FlameTreeFoliagePlacer(ConstantInt.of(3),ConstantInt.of(3),6),
-                new TwoLayersFeatureSize(3,3,3)
+                new FlameTreeFoliagePlacer(ConstantInt.of(3),ConstantInt.of(3),3),
+                new TwoLayersFeatureSize(1,10,10)
         ).build()));
     }
 

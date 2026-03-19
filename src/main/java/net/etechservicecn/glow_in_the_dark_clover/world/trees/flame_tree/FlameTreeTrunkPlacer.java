@@ -31,9 +31,11 @@ public class FlameTreeTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader levelSimulatedReader, BiConsumer<BlockPos, BlockState> biConsumer, RandomSource randomSource, int height, BlockPos blockPos, TreeConfiguration treeConfiguration) {
-        int real_height=baseHeight+randomSource.nextInt(heightRandA,heightRandB);
-        for (int i = 0; i < real_height; i++) {
-            this.placeLog(levelSimulatedReader,biConsumer,randomSource,blockPos.above(i),treeConfiguration);
+        int real_height=baseHeight+randomSource.nextInt(heightRandA,heightRandA+1)+randomSource.nextInt(heightRandB,heightRandB+1);
+        if (levelSimulatedReader.isStateAtPosition(blockPos.below(1),p->p.is(BlockList.FIRE_DIRT_BLOCK.get()))){
+            for (int i = 0; i < real_height; i++) {
+                this.placeLog(levelSimulatedReader,biConsumer,randomSource,blockPos.above(i),treeConfiguration);
+            }
         }
         return ImmutableList.of(new FoliagePlacer.FoliageAttachment(blockPos.above(real_height),0,false));
     }
