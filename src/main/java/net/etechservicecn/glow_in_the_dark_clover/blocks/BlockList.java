@@ -4,6 +4,7 @@ import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FireDirtBlock;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.FlameTreeLeavesBlock;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.FlameTreeLogBlock;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.FlameTreeSaplingBlock;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.TeleportBlock;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.TeleportSchedulerBlock;
 import net.minecraft.core.registries.Registries;
@@ -26,6 +27,8 @@ public class BlockList {
             ()->new FlameTreeLogBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG)));
     public static final RegistryObject<FlameTreeLeavesBlock>FLAME_TREE_LEAVES_BLOCK=BLOCKS.register("flame_tree_leaves",
             ()->new FlameTreeLeavesBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LEAVES)));
+    public static final RegistryObject<FlameTreeSaplingBlock>FLAME_TREE_SAPLING_BLOCK=BLOCKS.register("flame_tree_sapling",
+            ()->new FlameTreeSaplingBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
     public static void register(IEventBus bus){
         BLOCKS.register(bus);
     }

@@ -1,35 +1,35 @@
-[183月2026 18:08:53.677] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\12952\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.19, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, glow_in_the_dark_clover, --all, --output, C:\Users\12952\Desktop\GlowInTheDarkClover\src\generated\resources, --existing, C:\Users\12952\Desktop\GlowInTheDarkClover\src\main\resources]
-[183月2026 18:08:53.677] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
-[183月2026 18:08:53.796] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[183月2026 18:08:53.843] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/12952/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[183月2026 18:08:54.123] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.19\99f54fe7798c97a9a6e7c962ef94f7d30610122d\javafmllanguage-1.20.1-47.2.19.jar is missing mods.toml file
-[183月2026 18:08:54.123] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.19\1b32b3f27357ab558a098c1c20e1494558a71b31\lowcodelanguage-1.20.1-47.2.19.jar is missing mods.toml file
-[183月2026 18:08:54.128] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.19\2eb26ae9afdd5709b9ee9bdf90b9486212a676af\mclanguage-1.20.1-47.2.19.jar is missing mods.toml file
-[183月2026 18:08:54.132] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.19\7cd28cc091d07bbe6a4f51bf9728ccbc27bfc4fc\fmlcore-1.20.1-47.2.19.jar is missing mods.toml file
-[183月2026 18:08:54.195] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[183月2026 18:08:55.549] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\12952\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, glow_in_the_dark_clover, --all, --output, C:\Users\12952\Desktop\GlowInTheDarkClover\src\generated\resources, --existing, C:\Users\12952\Desktop\GlowInTheDarkClover\src\main\resources]
-[183月2026 18:08:55.866] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [glow_in_the_dark_clover]
-[183月2026 18:09:00.158] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.19, for MC 1.20.1 with MCP 20230612.114412
-[183月2026 18:09:00.163] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.19 Initialized
-[183月2026 18:09:00.631] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/12952/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.19_mapped_official_1.20.1/forge-1.20.1-47.2.19_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[183月2026 18:09:00.631] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/12952/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.19_mapped_official_1.20.1/forge-1.20.1-47.2.19_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[183月2026 18:09:00.804] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: glow_in_the_dark_clover
-[183月2026 18:09:00.818] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: glow_in_the_dark_clover finished after 13 ms
-[183月2026 18:09:00.818] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: zh_cn
-[183月2026 18:09:00.818] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: zh_cn finished after 1 ms
-[183月2026 18:09:00.818] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: glow_in_the_dark_clover
-[183月2026 18:09:00.958] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: glow_in_the_dark_clover finished after 138 ms
-[183月2026 18:09:00.958] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id glow_in_the_dark_clover
-[183月2026 18:09:00.971] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id glow_in_the_dark_clover finished after 14 ms
-[183月2026 18:09:00.971] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id glow_in_the_dark_clover
-[183月2026 18:09:00.976] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id glow_in_the_dark_clover finished after 1 ms
-[183月2026 18:09:00.976] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[183月2026 18:09:01.007] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 34 ms
-[183月2026 18:09:01.007] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[183月2026 18:09:01.032] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 22 ms
-[183月2026 18:09:01.032] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
-[183月2026 18:09:01.062] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 30 ms
-[183月2026 18:09:01.062] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[183月2026 18:09:01.073] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 12 ms
-[183月2026 18:09:01.073] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 271 ms
-[183月2026 18:09:01.088] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 40, old count: 40, new count: 41, removed stale: 0, written: 1
+[193月2026 18:35:28.524] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\12952\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.19, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, glow_in_the_dark_clover, --all, --output, C:\Users\12952\Desktop\GlowInTheDarkClover\src\generated\resources, --existing, C:\Users\12952\Desktop\GlowInTheDarkClover\src\main\resources]
+[193月2026 18:35:28.540] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[193月2026 18:35:28.875] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[193月2026 18:35:28.923] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/12952/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[193月2026 18:35:29.193] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.19\99f54fe7798c97a9a6e7c962ef94f7d30610122d\javafmllanguage-1.20.1-47.2.19.jar is missing mods.toml file
+[193月2026 18:35:29.193] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.19\1b32b3f27357ab558a098c1c20e1494558a71b31\lowcodelanguage-1.20.1-47.2.19.jar is missing mods.toml file
+[193月2026 18:35:29.193] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.19\2eb26ae9afdd5709b9ee9bdf90b9486212a676af\mclanguage-1.20.1-47.2.19.jar is missing mods.toml file
+[193月2026 18:35:29.193] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\12952\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.19\7cd28cc091d07bbe6a4f51bf9728ccbc27bfc4fc\fmlcore-1.20.1-47.2.19.jar is missing mods.toml file
+[193月2026 18:35:29.276] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[193月2026 18:35:30.487] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\12952\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, glow_in_the_dark_clover, --all, --output, C:\Users\12952\Desktop\GlowInTheDarkClover\src\generated\resources, --existing, C:\Users\12952\Desktop\GlowInTheDarkClover\src\main\resources]
+[193月2026 18:35:30.814] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [glow_in_the_dark_clover]
+[193月2026 18:35:34.883] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.19, for MC 1.20.1 with MCP 20230612.114412
+[193月2026 18:35:34.883] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.19 Initialized
+[193月2026 18:35:35.348] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/12952/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.19_mapped_official_1.20.1/forge-1.20.1-47.2.19_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[193月2026 18:35:35.348] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/12952/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.19_mapped_official_1.20.1/forge-1.20.1-47.2.19_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[193月2026 18:35:35.509] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: glow_in_the_dark_clover
+[193月2026 18:35:35.547] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: glow_in_the_dark_clover finished after 25 ms
+[193月2026 18:35:35.547] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: zh_cn
+[193月2026 18:35:35.552] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: zh_cn finished after 2 ms
+[193月2026 18:35:35.552] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: glow_in_the_dark_clover
+[193月2026 18:35:35.711] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: glow_in_the_dark_clover finished after 157 ms
+[193月2026 18:35:35.711] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id glow_in_the_dark_clover
+[193月2026 18:35:35.726] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id glow_in_the_dark_clover finished after 14 ms
+[193月2026 18:35:35.726] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id glow_in_the_dark_clover
+[193月2026 18:35:35.726] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id glow_in_the_dark_clover finished after 0 ms
+[193月2026 18:35:35.726] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[193月2026 18:35:35.758] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 38 ms
+[193月2026 18:35:35.758] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[193月2026 18:35:35.774] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 19 ms
+[193月2026 18:35:35.774] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[193月2026 18:35:35.790] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 18 ms
+[193月2026 18:35:35.790] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[193月2026 18:35:35.812] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 7 ms
+[193月2026 18:35:35.812] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 289 ms
+[193月2026 18:35:35.812] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 45, old count: 45, new count: 46, removed stale: 0, written: 0

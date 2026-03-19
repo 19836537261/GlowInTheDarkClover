@@ -25,7 +25,7 @@ public class ItemModelDataGenerator extends ItemModelProvider {
         registerBlockItem(ItemList.TELEPORT_SCHEDULER_BLOCK_ITEM);
         registerBlockItem(ItemList.FLAME_TREE_LOG_BLOCK_ITEM);
         registerBlockItem(ItemList.FLAME_TREE_LEAVES_BLOCK_ITEM);
-
+        registerBlockItem(ItemList.FLAME_TREE_SAPLING_BLOCK_ITEM);
     }
     private void registerItem(RegistryObject<Item>itemRegistryObject){
         this.withExistingParent(itemRegistryObject.getId().getPath(),mcLoc("generated"))

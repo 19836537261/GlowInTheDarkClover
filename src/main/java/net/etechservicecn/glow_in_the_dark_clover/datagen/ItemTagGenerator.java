@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.datagen;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.tags.FireBurnWorldTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;

@@ -21,6 +21,10 @@ public class BlockStateDataGenerator extends BlockStateProvider {
         this.buildOnePatternBlock(BlockList.TELEPORT_BLOCK);
         this.buildTopSideBlock(BlockList.FLAME_TREE_LOG_BLOCK);
         this.buildOnePatternBlock(BlockList.FLAME_TREE_LEAVES_BLOCK);
+        this.buildCrossBlock(BlockList.FLAME_TREE_SAPLING_BLOCK);
+    }
+    private void buildCrossBlock(RegistryObject<? extends Block>block){
+        simpleBlock(block.get(),models().singleTexture(block.getId().getPath(),mcLoc("block/cross"),"cross",modLoc("block/"+block.getId().getPath())).renderType("cutout"));
     }
     private void buildTopSideBlock(RegistryObject<? extends Block>block){
         simpleBlock(block.get(),models().cubeBottomTop(

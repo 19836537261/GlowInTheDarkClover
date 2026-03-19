@@ -18,6 +18,13 @@ public class LangGenerator extends LanguageProvider {
     protected void addTranslations() {
         this.add(ItemList.FIRE_LAUNCHER.get(),"火焰权杖");
         this.add(ItemList.FIRE_WORLD_TOKEN.get(),"火焰令牌");
+
+        this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
+        this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
+        this.add(BlockList.FLAME_TREE_LEAVES_BLOCK.get(),"火焰树叶");
+        this.add(BlockList.FLAME_TREE_LOG_BLOCK.get(),"火焰树原木");
+        this.add(BlockList.FLAME_TREE_SAPLING_BLOCK.get(),"火焰树苗");
+
         this.add("creative_tab.weapon", "GITDC武器");
         this.add("creative_tab.block","GITDC方块");
         this.add("creative_tab.item","GITDC物品");
@@ -25,8 +32,7 @@ public class LangGenerator extends LanguageProvider {
         this.addItemTranslate(ItemList.FIRE_WORLD_TOKEN,"使用该物品去激活火焰世界维度吧");
         this.addBlockTranslate(BlockList.FIRE_DIRT_BLOCK,"看起来是岩浆和草方块的结合体。。。");
         this.addBlockTranslate(BlockList.TELEPORT_SCHEDULER_BLOCK,"可以使用该令牌去激活任意传送门");
-        this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
-        this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
+
         this.addAdvancement("fire_world_root","由此开启了异世界的冒险故事","使用黑曜石、附魔台、烈焰棒、下界之星、末影之眼、龙息合成任意传送门。");
         this.addAdvancement("root","浴火焚身","使用烈焰粉和纸合成火焰令牌。");
 

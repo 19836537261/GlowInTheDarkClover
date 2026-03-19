@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.datagen;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.tags.FireBurnWorldTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -24,5 +25,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(BlockList.FLAME_TREE_LOG_BLOCK.get());
         this.tag(BlockTags.LOGS).add(BlockList.FLAME_TREE_LOG_BLOCK.get());
         this.tag(BlockTags.LEAVES).add(BlockList.FLAME_TREE_LEAVES_BLOCK.get());
+        this.tag(FireBurnWorldTags.Blocks.FLAME_TREE_FARMLAND).add(BlockList.FIRE_DIRT_BLOCK.get());
     }
 }
