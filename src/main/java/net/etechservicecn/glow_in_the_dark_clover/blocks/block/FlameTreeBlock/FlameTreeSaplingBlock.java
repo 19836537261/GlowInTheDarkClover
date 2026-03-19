@@ -34,9 +34,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.Nullable;
 
-public class FlameTreeSaplingBlock extends SaplingBlock implements EntityBlock{
-
-
+public class FlameTreeSaplingBlock extends SaplingBlock{
+    public static final IntegerProperty GROW_AGE=IntegerProperty.create("age",0,3);
     public FlameTreeSaplingBlock( Properties p_55979_) {
         super(new AbstractTreeGrower() {
             @Nullable
@@ -44,7 +43,65 @@ public class FlameTreeSaplingBlock extends SaplingBlock implements EntityBlock{
             protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource p_222910_, boolean p_222911_) {
                 return ConfigurationFeatures.FLAME_TREE_FEATURE;
             }
-        }, p_55979_);
+        }, p_55979_.randomTicks());
+        this.registerDefaultState(this.getStateDefinition().any().setValue(GROW_AGE,0));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_56001_) {
+        super.createBlockStateDefinition(p_56001_);
+        p_56001_.add(GROW_AGE);
+    }
+
+    @Override
+    public boolean isRandomlyTicking(BlockState p_49921_) {
+        return p_49921_.getValue(GROW_AGE)<3;
+    }
+    private int counter=2;
+    private int base_height=4;
+    private int rand_a=0;
+    private int rand_b=1;
+    private int radius=3;
+    @Override
+    public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+        if (counter==0){
+            int current_age=blockState.getValue(GROW_AGE);
+            if (current_age>=2){
+                BlockPos running_pos=blockPos;
+                int real_height=base_height+randomSource.nextInt(rand_a,rand_a+1)+randomSource.nextInt(rand_b,rand_b+1);
+                for (int i = 0; i < real_height; i++) {
+                    serverLevel.setBlock(running_pos.above(i), BlockList.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                }
+                BlockPos center=running_pos.above(real_height-1);
+                fill_leaves(serverLevel,center,radius);
+                int random_pattern=randomSource.nextInt(0,10);
+                if (random_pattern>5){
+                    fill_leaves(serverLevel,center.below(1),radius-1);
+                    fill_leaves(serverLevel,center.above(1),radius-1);
+                    fill_leaves(serverLevel,center.above(2),radius-2);
+                } else if (random_pattern<=5) {
+                    fill_leaves(serverLevel,center.below(1),radius);
+                    fill_leaves(serverLevel,center.above(1),radius);
+                    fill_leaves(serverLevel,center.above(2),radius-1);
+                }
+                counter=0;
+            }else {
+                serverLevel.setBlock(blockPos,blockState.setValue(GROW_AGE,current_age+1),Block.UPDATE_ALL);
+            }
+            counter=2;
+        }else {
+            counter--;
+        }
+    }
+    private void fill_leaves(Level level, BlockPos fill_pos,int radius) {
+        for (int x = -radius+1; x < radius; x++) {
+            for (int z = -radius+1; z < radius; z++) {
+                BlockPos blockPos=fill_pos.offset(x,0,z);
+                if (!level.getBlockState(blockPos).is(BlockList.FLAME_TREE_LOG_BLOCK.get())){
+                    level.setBlock(blockPos,BlockList.FLAME_TREE_LEAVES_BLOCK.get().defaultBlockState(),Block.UPDATE_ALL);
+                }
+            }
+        }
     }
 
     @Override
@@ -69,41 +126,44 @@ public class FlameTreeSaplingBlock extends SaplingBlock implements EntityBlock{
     protected boolean mayPlaceOn(BlockState p_51042_, BlockGetter p_51043_, BlockPos p_51044_) {
         return p_51042_.is(FireBurnWorldTags.Blocks.FLAME_TREE_FARMLAND);
     }
-
-    @Nullable
-    @Override
-    public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-        return new FlameTreeBlockEntity(p_153215_,p_153216_);
-    }
-
+    private int consume=3;
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (!level.isClientSide()){
             ItemStack itemStack=player.getMainHandItem();
             if (itemStack.is(Items.FIRE_CHARGE)){
-                this.is_grow=true;
-                this.blockPos=blockPos;
+                int current_age=blockState.getValue(GROW_AGE);
+                if (consume<0){
+                    if (current_age>=2){
+                        BlockPos running_pos=blockPos;
+                        int real_height=base_height+level.random.nextInt(rand_a,rand_a+1)+level.random.nextInt(rand_b,rand_b+1);
+                        for (int i = 0; i < real_height; i++) {
+                            level.setBlock(running_pos.above(i), BlockList.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                        }
+                        BlockPos center=running_pos.above(real_height-1);
+                        fill_leaves(level,center,radius);
+                        int random_pattern=level.random.nextInt(0,10);
+                        if (random_pattern>5){
+                            fill_leaves(level,center.below(1),radius-1);
+                            fill_leaves(level,center.above(1),radius-1);
+                            fill_leaves(level,center.above(2),radius-2);
+                        } else if (random_pattern<=5) {
+                            fill_leaves(level,center.below(1),radius);
+                            fill_leaves(level,center.above(1),radius);
+                            fill_leaves(level,center.above(2),radius-1);
+                        }
+                        consume=level.random.nextInt(3,7);
+                    }else {
+                        level.setBlock(blockPos,blockState.setValue(GROW_AGE,current_age+1),Block.UPDATE_ALL);
+                    }
+                }else {
+                    consume--;
+                }
                 if (!player.isCreative()){
                     itemStack.shrink(1);
                 }
             }
         }
         return InteractionResult.SUCCESS;
-    }
-    private boolean is_grow=false;
-    private BlockPos blockPos=new BlockPos(0,0,0);
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_153212_, BlockState p_153213_, BlockEntityType<T> p_153214_) {
-        if (p_153214_==BlockEntityTypeList.FLAME_TREE_BLOCK_ENTITY_TYPE.get()){
-            return ((level, blockPos, blockState, blockEntity) -> {
-                if (blockEntity instanceof FlameTreeBlockEntity flameTreeBlockEntity){
-                    flameTreeBlockEntity.set_activate(this.is_grow);
-                    flameTreeBlockEntity.setBlockPos(this.blockPos);
-                    flameTreeBlockEntity.animateTick(blockState,level,blockPos,level.random);
-                }
-            });
-        }
-        return EntityBlock.super.getTicker(p_153212_, p_153213_, p_153214_);
     }
 }
