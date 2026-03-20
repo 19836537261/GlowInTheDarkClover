@@ -7,8 +7,11 @@ import net.etechservicecn.glow_in_the_dark_clover.tags.FireBurnWorldTags;
 import net.etechservicecn.glow_in_the_dark_clover.world.ConfigurationFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -33,6 +36,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public class FlameTreeSaplingBlock extends SaplingBlock{
     public static final IntegerProperty GROW_AGE=IntegerProperty.create("age",0,3);
@@ -131,7 +136,7 @@ public class FlameTreeSaplingBlock extends SaplingBlock{
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (!level.isClientSide()){
             ItemStack itemStack=player.getMainHandItem();
-            if (itemStack.is(Items.FIRE_CHARGE)){
+            if (itemStack.is(Items.FIRE_CHARGE)&&blockState.is(this)){
                 int current_age=blockState.getValue(GROW_AGE);
                 if (consume<0){
                     if (current_age>=2){
@@ -161,6 +166,15 @@ public class FlameTreeSaplingBlock extends SaplingBlock{
                 }
                 if (!player.isCreative()){
                     itemStack.shrink(1);
+                }
+                level.playSound(null,blockPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1.0f,1.0f);
+            }
+        }
+        if (level.isClientSide()){
+            ItemStack itemStack=player.getMainHandItem();
+            if (itemStack.is(Items.FIRE_CHARGE)&&blockState.is(this)){
+                for (int i = 0; i < 12; i++) {
+                    level.addParticle(ParticleTypes.FLAME,blockPos.getX()+level.random.nextFloat(),blockPos.getY()+0.5,blockPos.getZ()+level.random.nextFloat(),0,0.1D,0);
                 }
             }
         }
