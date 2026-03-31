@@ -76,22 +76,4 @@ public class FireLauncherItem extends Item {
             counter++;
         }
     }
-    //    @Override
-//    public InteractionResult useOn(UseOnContext p_41427_) {
-//        Level level=p_41427_.getLevel();
-//        Player player=p_41427_.getPlayer();
-//        ItemStack itemStack=p_41427_.getItemInHand();
-//        if (!level.isClientSide()&&player!=null){
-//            double x=player.getX();
-//            double y=player.getEyeY();
-//            double z=player.getZ();
-//            Vec3 look_angle=player.getLookAngle();
-//            SmallFireball smallFireball=new SmallFireball(level,player,look_angle.x,look_angle.y,look_angle.z);
-//            smallFireball.setDeltaMovement(look_angle.x,3,look_angle.z);
-//            level.addFreshEntity(smallFireball);
-//            itemStack.hurtAndBreak(1,player,p->p.broadcastBreakEvent(p_41427_.getHand()));
-//            player.getCooldowns().addCooldown(this,20);
-//        }
-//        return InteractionResult.sidedSuccess(level.isClientSide());
-//    }
 }

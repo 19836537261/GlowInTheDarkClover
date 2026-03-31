@@ -1,12 +1,10 @@
 package net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock;
 
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
-import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
-import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.FlameTreeBlock.FlameTreeBlockEntity;
+import net.etechservicecn.glow_in_the_dark_clover.events.ModConfigEvent;
 import net.etechservicecn.glow_in_the_dark_clover.tags.FireBurnWorldTags;
 import net.etechservicecn.glow_in_the_dark_clover.world.ConfigurationFeatures;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -22,22 +20,13 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Random;
 
 public class FlameTreeSaplingBlock extends SaplingBlock{
     public static final IntegerProperty GROW_AGE=IntegerProperty.create("age",0,3);
@@ -173,8 +162,10 @@ public class FlameTreeSaplingBlock extends SaplingBlock{
         if (level.isClientSide()){
             ItemStack itemStack=player.getMainHandItem();
             if (itemStack.is(Items.FIRE_CHARGE)&&blockState.is(this)){
-                for (int i = 0; i < 12; i++) {
-                    level.addParticle(ParticleTypes.FLAME,blockPos.getX()+level.random.nextFloat(),blockPos.getY()+0.5,blockPos.getZ()+level.random.nextFloat(),0,0.1D,0);
+                Integer particles= ModConfigEvent.flame_tree_sapling_block_particles;
+                Double speed=ModConfigEvent.flame_tree_sapling_block_particle_speed;
+                for (int i = 0; i < particles; i++) {
+                    level.addParticle(ParticleTypes.FLAME,blockPos.getX()+level.random.nextFloat(),blockPos.getY()+0.5,blockPos.getZ()+level.random.nextFloat(),0,speed,0);
                 }
             }
         }

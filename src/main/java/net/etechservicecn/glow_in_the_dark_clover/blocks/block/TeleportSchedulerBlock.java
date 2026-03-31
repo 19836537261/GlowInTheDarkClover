@@ -8,6 +8,7 @@ import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -26,15 +27,25 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class TeleportSchedulerBlock extends Block implements EntityBlock {
-    private boolean is_active=false;
+    private long current_seed_song=0l;
+    public static final BooleanProperty IS_ACTIVE=BooleanProperty.create("is_activate");
     public TeleportSchedulerBlock(Properties p_49795_) {
-        super(p_49795_.randomTicks().lightLevel((p)->{return 10;}));
+        super(p_49795_.lightLevel((p)->{return 10;}));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(IS_ACTIVE,false));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_49915_) {
+        super.createBlockStateDefinition(p_49915_);
+        p_49915_.add(IS_ACTIVE);
     }
 
     @Nullable
@@ -44,15 +55,32 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
     }
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_153212_, BlockState p_153213_, BlockEntityType<T> p_153214_) {
-        if (p_153214_==BlockEntityTypeList.TELEPORT_SCHEDULER_ENTITY_TYPE.get()){
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level source_level, BlockState source_blockState, BlockEntityType<T> blockEntityType) {
+        if (blockEntityType==BlockEntityTypeList.TELEPORT_SCHEDULER_ENTITY_TYPE.get()){
             return (level, blockPos, blockState,blockEntity) ->{
                 if (blockEntity instanceof TeleportSchedulerBlockEntity entity){
-                    entity.calculate_counter(is_active);
+                    entity.calculate_counter(source_blockState.getValue(IS_ACTIVE));
+                    if (blockState.getValue(IS_ACTIVE))
+                    {
+                        if (counter==0){
+                            this.current_seed_song=source_level.random.nextLong();
+                            source_level.playSeededSound(null,blockPos.getX(),blockPos.getY(),blockPos.getZ(),SoundEvents.PORTAL_AMBIENT,SoundSource.BLOCKS,1.0F,1.0F,this.current_seed_song);
+                            counter=300;
+                        }else {
+                            counter--;
+                        }
+                    }
                 }
             };
         }
         return null;
+    }
+    private int counter=300;
+    @Override
+    public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+        if (blockState.is(this)){
+
+        }
     }
 
     @Override
@@ -72,7 +100,7 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
         double z=blockPos.getZ();
         double theta=(double) 1/360;
         double summon_height= ModConfigEvent.teleport_scheduler_parameters.get(0);
-        if (this.is_active){
+        if (blockState.getValue(IS_ACTIVE)){
             for (int i = 0; i < ModConfigEvent.teleport_scheduler_parameters.get(2); i++) {
                 double angle=theta*randomSource.nextInt(-1080,1080);
                 double radius=ModConfigEvent.teleport_scheduler_parameters.get(1);
@@ -115,8 +143,9 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
             if (!player.isCreative()){
                 itemStack.shrink(1);
             }
-            this.is_active=true;
+            level.setBlock(blockPos,level.getBlockState(blockPos).setValue(IS_ACTIVE,true),Block.UPDATE_ALL);
             level.playSound(null,blockPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1.0F,1.0F);
+
             level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),1.0d,1.0d,0.0d);
             level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),-1.0d,1.0d,0.0d);
             BlockPos start_fill_pos=north.above(1);
@@ -146,8 +175,10 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
                 if (!player.isCreative()){
                     itemStack.shrink(1);
                 }
-                this.is_active=true;
+                level.setBlock(blockPos,level.getBlockState(blockPos).setValue(IS_ACTIVE,true),Block.UPDATE_ALL);
                 level.playSound(null,blockPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1.0F,1.0F);
+
+
                 level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),0.0d,1.0d,1.0d);
                 level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),0.0d,1.0d,-1.0d);
                 BlockPos start_fill_pos=east.above(1);

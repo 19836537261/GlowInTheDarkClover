@@ -49,6 +49,12 @@ public class ModConfigEvent
     public static final ForgeConfigSpec.ConfigValue<List<? extends Double>> TELEPORT_SCHEDULER_PARAMETERS=BUILDER
             .comment("设置任意传送门的粒子特效高度和生成半径。高度默认为0.5，半径默认为2,粒子密集程度值默认为32")
             .defineList("teleport_scheduler_parameters", List.of(0.5d,2.0d,32.0D),p->p instanceof Double);
+    public static final ForgeConfigSpec.ConfigValue<Integer>FLAME_TREE_SAPLING_BLOCK_PARTICLES=BUILDER
+            .comment("火焰树生长阶段的粒子生成数量")
+            .defineInRange("flame_tree_sapling_block_particles",12,6,20);
+    public static final ForgeConfigSpec.ConfigValue<Double>FLAME_TREE_SAPLING_BLOCK_PARTICLE_SPEED=BUILDER
+            .comment("火焰树生长阶段的粒子运动速度")
+            .defineInRange("flame_tree_sapling_block_particle_speed",0.1d,0.05d,1.0d);
     public static final ForgeConfigSpec SPEC = BUILDER.build();
     public static int magicNumber;
     public static Set<Item> items;
@@ -59,6 +65,8 @@ public class ModConfigEvent
     public static double fire_dirt_block_effect_speed;
     public static Integer fire_dirt_block_self_burn_effect_time;
     public static List<? extends Double>teleport_scheduler_parameters;
+    public static Integer flame_tree_sapling_block_particles;
+    public static Double flame_tree_sapling_block_particle_speed;
 
 
     private static boolean validateItemName(final Object obj)
@@ -82,5 +90,7 @@ public class ModConfigEvent
         fire_dirt_block_effect_speed=FIRE_DIRT_BLOCK_EFFECT_SPEED.get();
         fire_dirt_block_self_burn_effect_time=FIRE_DIRT_BLOCK_SELF_BURN_EFFECT_TIME.get();
         teleport_scheduler_parameters=TELEPORT_SCHEDULER_PARAMETERS.get();
+        flame_tree_sapling_block_particles= FLAME_TREE_SAPLING_BLOCK_PARTICLES.get();
+        flame_tree_sapling_block_particle_speed=FLAME_TREE_SAPLING_BLOCK_PARTICLE_SPEED.get();
     }
 }
