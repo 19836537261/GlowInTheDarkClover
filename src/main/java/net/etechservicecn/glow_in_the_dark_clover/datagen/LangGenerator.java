@@ -33,8 +33,10 @@ public class LangGenerator extends LanguageProvider {
         this.addBlockTranslate(BlockList.FIRE_DIRT_BLOCK,"看起来是岩浆和草方块的结合体。。。");
         this.addBlockTranslate(BlockList.TELEPORT_SCHEDULER_BLOCK,"可以使用该令牌去激活任意传送门");
 
-        this.addAdvancement("fire_world_root","由此开启了异世界的冒险故事","使用黑曜石、附魔台、烈焰棒、下界之星、末影之眼、龙息合成任意传送门。");
-        this.addAdvancement("root","浴火焚身","使用烈焰粉和纸合成火焰令牌。");
+        this.addAdvancement("root","由此开启了异世界的冒险故事","使用黑曜石、附魔台、烈焰棒、下界之星、末影之眼、龙息合成任意传送门。");
+        this.addAdvancement("fire_world_root","浴火焚身","使用烈焰粉和纸合成火焰令牌。");
+        this.addAdvancement("fire_world_activate_portal","火焰门","使用火焰令牌激活传送门框架");
+        this.addAdvancement("fire_world_entrance","初入火焰世界","通过火焰传送门进入火焰维度");
 
     }
     private void addItemTranslate(RegistryObject<Item>itemRegistryObject,String description){

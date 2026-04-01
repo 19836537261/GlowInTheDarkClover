@@ -1,14 +1,19 @@
 package net.etechservicecn.glow_in_the_dark_clover.blocks.block;
 
+import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntity;
 import net.etechservicecn.glow_in_the_dark_clover.events.ModConfigEvent;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
+import net.etechservicecn.glow_in_the_dark_clover.triggers.TeleportTrigger;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -76,12 +81,6 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
         return null;
     }
     private int counter=300;
-    @Override
-    public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (blockState.is(this)){
-
-        }
-    }
 
     @Override
     public void appendHoverText(ItemStack p_49816_, @Nullable BlockGetter p_49817_, List<Component> p_49818_, TooltipFlag p_49819_) {
@@ -146,6 +145,11 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
             level.setBlock(blockPos,level.getBlockState(blockPos).setValue(IS_ACTIVE,true),Block.UPDATE_ALL);
             level.playSound(null,blockPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1.0F,1.0F);
 
+            if (player instanceof ServerPlayer serverPlayer){
+                net.etechservicecn.glow_in_the_dark_clover.events.AdvanceTriggerRegisterEvent.TELEPORT_TRIGGER.trigger(serverPlayer);
+            }
+
+
             level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),1.0d,1.0d,0.0d);
             level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),-1.0d,1.0d,0.0d);
             BlockPos start_fill_pos=north.above(1);
@@ -178,6 +182,9 @@ public class TeleportSchedulerBlock extends Block implements EntityBlock {
                 level.setBlock(blockPos,level.getBlockState(blockPos).setValue(IS_ACTIVE,true),Block.UPDATE_ALL);
                 level.playSound(null,blockPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1.0F,1.0F);
 
+                if (player instanceof ServerPlayer serverPlayer){
+                    net.etechservicecn.glow_in_the_dark_clover.events.AdvanceTriggerRegisterEvent.TELEPORT_TRIGGER.trigger(serverPlayer);
+                }
 
                 level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),0.0d,1.0d,1.0d);
                 level.addParticle(ParticleTypes.FLAME,blockPos.getX(),blockPos.getY(),blockPos.getZ(),0.0d,1.0d,-1.0d);

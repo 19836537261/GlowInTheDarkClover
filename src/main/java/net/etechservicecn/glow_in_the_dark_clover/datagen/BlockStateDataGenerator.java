@@ -18,7 +18,7 @@ public class BlockStateDataGenerator extends BlockStateProvider {
     protected void registerStatesAndModels() {
         this.buildTopSideBottomBlock(BlockList.FIRE_DIRT_BLOCK);
         this.buildTopSideBottomBlock(BlockList.TELEPORT_SCHEDULER_BLOCK);
-        this.buildOnePatternBlock(BlockList.TELEPORT_BLOCK);
+        this.buildTopSideBottomBlock(BlockList.TELEPORT_BLOCK);
         this.buildTopSideBlock(BlockList.FLAME_TREE_LOG_BLOCK);
         this.buildOnePatternBlock(BlockList.FLAME_TREE_LEAVES_BLOCK);
         this.buildCrossBlock(BlockList.FLAME_TREE_SAPLING_BLOCK);
