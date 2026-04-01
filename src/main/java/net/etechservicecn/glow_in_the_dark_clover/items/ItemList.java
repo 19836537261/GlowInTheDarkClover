@@ -4,6 +4,7 @@ import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
 import net.etechservicecn.glow_in_the_dark_clover.items.item.FireLauncherItem;
 import net.etechservicecn.glow_in_the_dark_clover.items.item.FireWorldTokenItem;
+import net.etechservicecn.glow_in_the_dark_clover.items.item.FlameTreeStickItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -21,6 +22,7 @@ public class ItemList {
     public static final RegistryObject<Item>FLAME_TREE_LOG_BLOCK_ITEM=ITEMS.register("flame_tree_log",()->new BlockItem(BlockList.FLAME_TREE_LOG_BLOCK.get(),new Item.Properties()));
     public static final RegistryObject<Item>FLAME_TREE_LEAVES_BLOCK_ITEM=ITEMS.register("flame_tree_leaves",()->new BlockItem(BlockList.FLAME_TREE_LEAVES_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item>FLAME_TREE_SAPLING_BLOCK_ITEM=ITEMS.register("flame_tree_sapling",()->new BlockItem(BlockList.FLAME_TREE_SAPLING_BLOCK.get(),new Item.Properties()));
+    public static final RegistryObject<Item>FLAME_TREE_STICK_ITEM=ITEMS.register("flame_tree_stick",()->new FlameTreeStickItem(new Item.Properties()));
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }

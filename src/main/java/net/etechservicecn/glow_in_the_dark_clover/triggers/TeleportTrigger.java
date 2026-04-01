@@ -6,8 +6,6 @@ import net.minecraft.advancements.critereon.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 
-import java.util.function.Predicate;
-
 public class TeleportTrigger extends SimpleCriterionTrigger<TeleportTrigger.Instance> {
     public static final ResourceLocation ID=new ResourceLocation(StartModApplication.MODID,"teleport_activated");
     @Override

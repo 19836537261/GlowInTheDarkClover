@@ -33,6 +33,7 @@ public class TabList {
             .title(Component.translatable("creative_tab.item")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(ItemList.FIRE_WORLD_TOKEN.get());
                 p_259752_.accept(ItemList.FLAME_TREE_SAPLING_BLOCK_ITEM.get());
+                p_259752_.accept(ItemList.FLAME_TREE_STICK_ITEM.get());
             })).build());
 
 

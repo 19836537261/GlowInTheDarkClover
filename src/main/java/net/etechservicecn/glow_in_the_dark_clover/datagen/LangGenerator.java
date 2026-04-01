@@ -18,6 +18,7 @@ public class LangGenerator extends LanguageProvider {
     protected void addTranslations() {
         this.add(ItemList.FIRE_LAUNCHER.get(),"火焰权杖");
         this.add(ItemList.FIRE_WORLD_TOKEN.get(),"火焰令牌");
+        this.add(ItemList.FLAME_TREE_STICK_ITEM.get(), "火焰木棍");
 
         this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
         this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
