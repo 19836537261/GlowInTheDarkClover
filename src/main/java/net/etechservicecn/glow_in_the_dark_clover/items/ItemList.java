@@ -23,6 +23,9 @@ public class ItemList {
     public static final RegistryObject<Item>FLAME_TREE_LEAVES_BLOCK_ITEM=ITEMS.register("flame_tree_leaves",()->new BlockItem(BlockList.FLAME_TREE_LEAVES_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item>FLAME_TREE_SAPLING_BLOCK_ITEM=ITEMS.register("flame_tree_sapling",()->new BlockItem(BlockList.FLAME_TREE_SAPLING_BLOCK.get(),new Item.Properties()));
     public static final RegistryObject<Item>FLAME_TREE_STICK_ITEM=ITEMS.register("flame_tree_stick",()->new FlameTreeStickItem(new Item.Properties()));
+    public static final RegistryObject<Item>FLAME_TREE_STRIPPED_LOG_BLOCK_ITEM=ITEMS.register("flame_tree_stripped_log",()->new BlockItem(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item>FLAME_TREE_PLANKS_BLOCK_ITEM=ITEMS.register("flame_tree_planks",()->new BlockItem(BlockList.FLAME_TREE_PLANKS_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item>FLAME_TREE_WOOD_BLOCK_ITEM=ITEMS.register("flame_tree_wood",()->new BlockItem(BlockList.FLAME_TREE_WOOD_BLOCK.get(), new Item.Properties()));
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }

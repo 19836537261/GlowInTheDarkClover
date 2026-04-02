@@ -23,8 +23,11 @@ public class LangGenerator extends LanguageProvider {
         this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
         this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
         this.add(BlockList.FLAME_TREE_LEAVES_BLOCK.get(),"火焰树叶");
-        this.add(BlockList.FLAME_TREE_LOG_BLOCK.get(),"火焰树原木");
+        this.add(BlockList.FLAME_TREE_LOG_BLOCK.get(),"火焰原木");
+        this.add(BlockList.FLAME_TREE_WOOD_BLOCK.get(), "火焰木");
         this.add(BlockList.FLAME_TREE_SAPLING_BLOCK.get(),"火焰树苗");
+        this.add(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get(),"削皮火焰原木");
+        this.add(BlockList.FLAME_TREE_PLANKS_BLOCK.get(), "火焰木板");
 
         this.add("creative_tab.weapon", "GITDC武器");
         this.add("creative_tab.block","GITDC方块");

@@ -38,7 +38,6 @@ public class LootTableGenerator extends LootTableProvider {
         super(packOutput, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)
         ));
-
     }
     public static class BlockLootTables extends BlockLootSubProvider{
 
@@ -54,6 +53,9 @@ public class LootTableGenerator extends LootTableProvider {
             this.add(BlockList.FLAME_TREE_LEAVES_BLOCK.get(),
                     build_leaves_multiple_drops(BlockList.FLAME_TREE_LEAVES_BLOCK.get(), BlockList.FLAME_TREE_SAPLING_BLOCK.get(), ItemList.FLAME_TREE_STICK_ITEM.get(),0.1f));
             this.dropSelf(BlockList.FLAME_TREE_SAPLING_BLOCK.get());
+            this.dropSelf(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get());
+            this.dropSelf(BlockList.FLAME_TREE_PLANKS_BLOCK.get());
+            this.dropSelf(BlockList.FLAME_TREE_WOOD_BLOCK.get());
         }
         protected LootTable.Builder build_leaves_multiple_drops(Block leaves_block,Block sapling_block,Item stick,float perhaps){
             return createSilkTouchOrShearsDispatchTable(leaves_block, this.applyExplosionCondition(leaves_block, LootItem.lootTableItem(sapling_block))

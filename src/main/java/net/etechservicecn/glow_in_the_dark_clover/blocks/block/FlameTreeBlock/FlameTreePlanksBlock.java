@@ -3,12 +3,12 @@ package net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class FlameTreeTrippedLogBlock extends RotatedPillarBlock {
-    public FlameTreeTrippedLogBlock(Properties p_55926_) {
-        super(p_55926_.requiresCorrectToolForDrops());
+public class FlameTreePlanksBlock extends Block {
+    public FlameTreePlanksBlock(Properties p_49795_) {
+        super(p_49795_.requiresCorrectToolForDrops());
     }
 
     @Override

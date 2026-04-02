@@ -26,6 +26,9 @@ public class TabList {
                 p_259752_.accept(BlockList.FIRE_DIRT_BLOCK.get());
                 p_259752_.accept(BlockList.TELEPORT_SCHEDULER_BLOCK.get());
                 p_259752_.accept(BlockList.FLAME_TREE_LOG_BLOCK.get());
+                p_259752_.accept(BlockList.FLAME_TREE_WOOD_BLOCK.get());
+                p_259752_.accept(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get());
+                p_259752_.accept(BlockList.FLAME_TREE_PLANKS_BLOCK.get());
                 p_259752_.accept(BlockList.FLAME_TREE_LEAVES_BLOCK.get());
             })).build());
     public static final RegistryObject<CreativeModeTab>ITEM_TAB=TABS.register("item_tab",()-> CreativeModeTab.builder()
