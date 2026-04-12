@@ -3,6 +3,7 @@ package net.etechservicecn.glow_in_the_dark_clover.datagen;
 import com.google.gson.JsonObject;
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.etechservicecn.glow_in_the_dark_clover.triggers.TeleportTrigger;
 import net.etechservicecn.glow_in_the_dark_clover.world.dimensions.FireBurnWorld;
@@ -60,7 +61,7 @@ public class ModAdvancementGenerator implements ForgeAdvancementProvider.Advance
                 .save(advancementConsumer,"fire_world_activate_portal");
 
         Advancement fire_world_entrance_goal=Advancement.Builder.advancement()
-                .display(new ItemStack(BlockList.FLAME_TREE_LOG_BLOCK.get()),
+                .display(new ItemStack(flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get()),
                         Component.translatable("advancement.fire_world_entrance.title"),
                         Component.translatable("advancement.fire_world_entrance.desc"),
                         new ResourceLocation(StartModApplication.MODID,"textures/block/flame_tree_log_side.png"),

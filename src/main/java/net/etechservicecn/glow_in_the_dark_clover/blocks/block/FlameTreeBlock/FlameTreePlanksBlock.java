@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FlameTreePlanksBlock extends Block {
     public FlameTreePlanksBlock(Properties p_49795_) {
-        super(p_49795_.requiresCorrectToolForDrops());
+        super(p_49795_.requiresCorrectToolForDrops().strength(10.0f));
     }
 
     @Override

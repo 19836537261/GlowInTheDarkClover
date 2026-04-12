@@ -62,7 +62,7 @@ public class FireLauncherItem extends Item {
                     Vec3 look_angle=player.getLookAngle();
                     for (int i = -1; i < 2; i++) {
                         SmallFireball smallFireball=new SmallFireball(p_41428_,player,look_angle.x*speed,look_angle.y*speed,look_angle.z*speed);
-                        smallFireball.setPos(x+i+look_angle.x,y+look_angle.y,z+i+look_angle.z);
+                        smallFireball.setPos(x+look_angle.x,y+look_angle.y,z+look_angle.z);
                         p_41428_.addFreshEntity(smallFireball);
                     }
                     p_41430_.hurtAndBreak(1,player,p->p.broadcastBreakEvent(InteractionHand.MAIN_HAND));

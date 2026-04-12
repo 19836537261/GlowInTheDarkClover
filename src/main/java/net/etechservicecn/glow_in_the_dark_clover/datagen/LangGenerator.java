@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.datagen;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -18,16 +19,9 @@ public class LangGenerator extends LanguageProvider {
     protected void addTranslations() {
         this.add(ItemList.FIRE_LAUNCHER.get(),"火焰权杖");
         this.add(ItemList.FIRE_WORLD_TOKEN.get(),"火焰令牌");
-        this.add(ItemList.FLAME_TREE_STICK_ITEM.get(), "火焰木棍");
 
         this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
         this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
-        this.add(BlockList.FLAME_TREE_LEAVES_BLOCK.get(),"火焰树叶");
-        this.add(BlockList.FLAME_TREE_LOG_BLOCK.get(),"火焰原木");
-        this.add(BlockList.FLAME_TREE_WOOD_BLOCK.get(), "火焰木");
-        this.add(BlockList.FLAME_TREE_SAPLING_BLOCK.get(),"火焰树苗");
-        this.add(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get(),"削皮火焰原木");
-        this.add(BlockList.FLAME_TREE_PLANKS_BLOCK.get(), "火焰木板");
 
         this.add("creative_tab.weapon", "GITDC武器");
         this.add("creative_tab.block","GITDC方块");
@@ -41,7 +35,21 @@ public class LangGenerator extends LanguageProvider {
         this.addAdvancement("fire_world_root","浴火焚身","使用烈焰粉和纸合成火焰令牌。");
         this.addAdvancement("fire_world_activate_portal","火焰门","使用火焰令牌激活传送门框架");
         this.addAdvancement("fire_world_entrance","初入火焰世界","通过火焰传送门进入火焰维度");
-
+        this.addTreeTranslation(flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_LEAVES_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_SAPLING_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_TRIPPED_LOG_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_WOOD_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_STAIR_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_SLAB_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_BUTTON_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_PRESSURE_PLATE_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_FENCE_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_FENCE_GATE_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_WALL_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_DOOR_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_TRAP_DOOR_BLOCK.get(),
+                flameTreePackageInfo.FLAME_TREE_PLANKS_BLOCK.get(),flameTreePackageInfo.FLAME_TREE_STICK_ITEM.get(),"火焰树");
     }
     private void addItemTranslate(RegistryObject<Item>itemRegistryObject,String description){
         this.add("item."+itemRegistryObject.getId().getPath()+".tooltip",description);
@@ -52,5 +60,37 @@ public class LangGenerator extends LanguageProvider {
     private void addAdvancement(String title_key,String title,String desc){
         this.add("advancement."+title_key+".title",title);
         this.add("advancement."+title_key+".desc",desc);
+    }
+    private void addTreeTranslation(Block log_block,
+                                    Block leaves_block,
+                                    Block sapling_block,
+                                    Block tripped_log_block,
+                                    Block wood_block,
+                                    Block stair_block,
+                                    Block slab_block,
+                                    Block button_block,
+                                    Block pressure_plate_block,
+                                    Block fence_block,
+                                    Block fence_gate_block,
+                                    Block wall_block,
+                                    Block door_block,
+                                    Block trap_door_block,
+                                    Block planks_block,Item stick_item,String base_name){
+        this.add(log_block,base_name+"原木");
+        this.add(leaves_block,base_name+"树叶");
+        this.add(sapling_block,base_name+"树苗");
+        this.add(tripped_log_block,"削皮"+base_name+"原木");
+        this.add(wood_block,base_name+"木头");
+        this.add(stair_block,base_name+"楼梯");
+        this.add(slab_block,base_name+"台阶");
+        this.add(button_block,base_name+"按钮");
+        this.add(pressure_plate_block,base_name+"压力板");
+        this.add(fence_block,base_name+"围栏");
+        this.add(fence_gate_block,base_name+"围栏门");
+        this.add(wall_block,base_name+"围墙");
+        this.add(door_block,base_name+"门");
+        this.add(trap_door_block,base_name+"陷阱门");
+        this.add(stick_item, base_name+"木棍");
+        this.add(planks_block, base_name+"木板");
     }
 }

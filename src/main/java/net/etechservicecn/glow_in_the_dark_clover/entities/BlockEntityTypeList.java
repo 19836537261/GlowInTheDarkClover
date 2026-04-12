@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.entities;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.FlameTreeBlock.FlameTreeBlockEntity;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportBlock.TeleportBlockEntity;
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntity;
@@ -18,7 +19,7 @@ public class BlockEntityTypeList {
     public static final RegistryObject<BlockEntityType<TeleportBlockEntity>>TELEPORT_BLOCK_ENTITY_TYPE=BLOCK_ENTITY_TYPES.register("teleport_block_entity_type",
             ()->BlockEntityType.Builder.of(TeleportBlockEntity::new,BlockList.TELEPORT_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<FlameTreeBlockEntity>>FLAME_TREE_BLOCK_ENTITY_TYPE=BLOCK_ENTITY_TYPES.register("flame_tree_block_entity_type",
-            ()->BlockEntityType.Builder.of(FlameTreeBlockEntity::new,BlockList.FLAME_TREE_SAPLING_BLOCK.get()).build(null));
+            ()->BlockEntityType.Builder.of(FlameTreeBlockEntity::new, flameTreePackageInfo.FLAME_TREE_SAPLING_BLOCK.get()).build(null));
     public static void register(IEventBus bus){
         BLOCK_ENTITY_TYPES.register(bus);
     }

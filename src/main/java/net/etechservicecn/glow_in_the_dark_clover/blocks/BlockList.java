@@ -21,18 +21,8 @@ public class BlockList {
             ()->new TeleportSchedulerBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
     public static final RegistryObject<TeleportBlock>TELEPORT_BLOCK=BLOCKS.register("teleport_block",
             ()->new TeleportBlock(BlockBehaviour.Properties.of()));
-    public static final RegistryObject<FlameTreeLogBlock>FLAME_TREE_LOG_BLOCK=BLOCKS.register("flame_tree_log",
-            ()->new FlameTreeLogBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG)));
-    public static final RegistryObject<FlameTreeLeavesBlock>FLAME_TREE_LEAVES_BLOCK=BLOCKS.register("flame_tree_leaves",
-            ()->new FlameTreeLeavesBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LEAVES)));
-    public static final RegistryObject<FlameTreeSaplingBlock>FLAME_TREE_SAPLING_BLOCK=BLOCKS.register("flame_tree_sapling",
-            ()->new FlameTreeSaplingBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
-    public static final RegistryObject<FlameTreeTrippedLogBlock>FLAME_TREE_TRIPPED_LOG_BLOCK=BLOCKS.register("flame_tree_stripped_log",
-            ()->new FlameTreeTrippedLogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_ACACIA_LOG)));
-    public static final RegistryObject<FlameTreeWoodBlock>FLAME_TREE_WOOD_BLOCK=BLOCKS.register("flame_tree_wood",
-            ()->new FlameTreeWoodBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_WOOD)));
-    public static final RegistryObject<FlameTreePlanksBlock>FLAME_TREE_PLANKS_BLOCK=BLOCKS.register("flame_tree_planks",
-            ()->new FlameTreePlanksBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)));
+
+
     public static void register(IEventBus bus){
         BLOCKS.register(bus);
     }

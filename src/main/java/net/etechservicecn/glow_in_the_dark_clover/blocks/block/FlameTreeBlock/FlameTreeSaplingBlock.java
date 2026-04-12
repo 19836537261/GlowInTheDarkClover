@@ -64,7 +64,7 @@ public class FlameTreeSaplingBlock extends SaplingBlock{
                 BlockPos running_pos=blockPos;
                 int real_height=base_height+randomSource.nextInt(rand_a,rand_a+1)+randomSource.nextInt(rand_b,rand_b+1);
                 for (int i = 0; i < real_height; i++) {
-                    serverLevel.setBlock(running_pos.above(i), BlockList.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                    serverLevel.setBlock(running_pos.above(i), flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
                 }
                 BlockPos center=running_pos.above(real_height-1);
                 fill_leaves(serverLevel,center,radius);
@@ -91,8 +91,8 @@ public class FlameTreeSaplingBlock extends SaplingBlock{
         for (int x = -radius+1; x < radius; x++) {
             for (int z = -radius+1; z < radius; z++) {
                 BlockPos blockPos=fill_pos.offset(x,0,z);
-                if (!level.getBlockState(blockPos).is(BlockList.FLAME_TREE_LOG_BLOCK.get())){
-                    level.setBlock(blockPos,BlockList.FLAME_TREE_LEAVES_BLOCK.get().defaultBlockState(),Block.UPDATE_ALL);
+                if (!level.getBlockState(blockPos).is(flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get())){
+                    level.setBlock(blockPos,flameTreePackageInfo.FLAME_TREE_LEAVES_BLOCK.get().defaultBlockState(),Block.UPDATE_ALL);
                 }
             }
         }
@@ -132,7 +132,7 @@ public class FlameTreeSaplingBlock extends SaplingBlock{
                         BlockPos running_pos=blockPos;
                         int real_height=base_height+level.random.nextInt(rand_a,rand_a+1)+level.random.nextInt(rand_b,rand_b+1);
                         for (int i = 0; i < real_height; i++) {
-                            level.setBlock(running_pos.above(i), BlockList.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                            level.setBlock(running_pos.above(i), flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
                         }
                         BlockPos center=running_pos.above(real_height-1);
                         fill_leaves(level,center,radius);

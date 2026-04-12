@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "glow_in_the_dark_clover:block/flame_tree_planks"
+  }
+}

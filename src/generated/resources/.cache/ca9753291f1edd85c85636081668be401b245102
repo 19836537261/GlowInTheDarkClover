@@ -1,0 +1,19 @@
+// 1.20.1	2026-04-11T19:53:07.7885005	Tags for minecraft:block mod id glow_in_the_dark_clover
+37d6498ab3e9ef88f45208712cec0d23f86693aa data/minecraft/tags/blocks/buttons.json
+48998449d998600a4a6a96f83e536d56e2ba69a2 data/minecraft/tags/blocks/doors.json
+0664adfb27e5b227903fa7bf1d48dd9481f2b767 data/minecraft/tags/blocks/fences.json
+3d5fef4cbb528594afcbd2f7d75af591ed63e55d data/minecraft/tags/blocks/fence_gates.json
+ec0a7d37d609fb51334342aba2915654335ee24a data/minecraft/tags/blocks/flame_tree_farmland.json
+fbc97e8b6de360113e5ae5fbcd85eeaea59e1285 data/minecraft/tags/blocks/leaves.json
+fae00ee5178dd4d817b9695cc0bbd92ea081a14e data/minecraft/tags/blocks/logs.json
+420c48300955cb441420830dbf9b6418de6e5c90 data/minecraft/tags/blocks/mineable/axe.json
+ec0a7d37d609fb51334342aba2915654335ee24a data/minecraft/tags/blocks/mineable/shovel.json
+420c48300955cb441420830dbf9b6418de6e5c90 data/minecraft/tags/blocks/needs_diamond_tool.json
+ec0a7d37d609fb51334342aba2915654335ee24a data/minecraft/tags/blocks/needs_iron_tool.json
+ba77f63da7aa298a483a0f1bcfec0f8720ad2e20 data/minecraft/tags/blocks/planks.json
+26e0da1615efb40feb8ffbe85326d6329fda642e data/minecraft/tags/blocks/pressure_plates.json
+e4ef991cf6d7772434ae5d2a8f92e8908c6248f2 data/minecraft/tags/blocks/saplings.json
+08097f649ee0e3629f090396d1bf4dc933e9ac1e data/minecraft/tags/blocks/slabs.json
+dadd5a0a5d9fd6caa9a89887ecf5d120292a9b92 data/minecraft/tags/blocks/stairs.json
+52c81769b67c1882e2cf808b11ba4dd37664b2a3 data/minecraft/tags/blocks/trapdoors.json
+71a727ee7c42ce98ebf679d17a7f42cad4bc1adc data/minecraft/tags/blocks/walls.json

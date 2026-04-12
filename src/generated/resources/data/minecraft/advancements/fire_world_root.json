@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:root",
+  "criteria": {
+    "get_fire_world_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "glow_in_the_dark_clover:fire_world_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "glow_in_the_dark_clover:textures/item/fire_world_token.png",
+    "description": {
+      "translate": "advancement.fire_world_root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "glow_in_the_dark_clover:fire_world_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.fire_world_root.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_fire_world_token"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

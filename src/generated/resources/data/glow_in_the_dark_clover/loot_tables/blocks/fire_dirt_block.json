@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "glow_in_the_dark_clover:fire_dirt_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "glow_in_the_dark_clover:blocks/fire_dirt_block"
+}

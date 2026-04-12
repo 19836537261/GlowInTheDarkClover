@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.items;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.items.item.FireLauncherItem;
 import net.etechservicecn.glow_in_the_dark_clover.items.item.FireWorldTokenItem;
 import net.etechservicecn.glow_in_the_dark_clover.items.item.FlameTreeStickItem;
@@ -19,13 +20,6 @@ public class ItemList {
     public static final RegistryObject<Item>FIRE_WORLD_TOKEN=ITEMS.register("fire_world_token",()->new FireWorldTokenItem(new Item.Properties()));
     public static final RegistryObject<Item>TELEPORT_SCHEDULER_BLOCK_ITEM=ITEMS.register("teleport_scheduler_block",()->new BlockItem(BlockList.TELEPORT_SCHEDULER_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item>TELEPORT_BLOCK_ITEM=ITEMS.register("teleport_block",()->new BlockItem(BlockList.TELEPORT_BLOCK.get(), new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_LOG_BLOCK_ITEM=ITEMS.register("flame_tree_log",()->new BlockItem(BlockList.FLAME_TREE_LOG_BLOCK.get(),new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_LEAVES_BLOCK_ITEM=ITEMS.register("flame_tree_leaves",()->new BlockItem(BlockList.FLAME_TREE_LEAVES_BLOCK.get(), new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_SAPLING_BLOCK_ITEM=ITEMS.register("flame_tree_sapling",()->new BlockItem(BlockList.FLAME_TREE_SAPLING_BLOCK.get(),new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_STICK_ITEM=ITEMS.register("flame_tree_stick",()->new FlameTreeStickItem(new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_STRIPPED_LOG_BLOCK_ITEM=ITEMS.register("flame_tree_stripped_log",()->new BlockItem(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get(), new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_PLANKS_BLOCK_ITEM=ITEMS.register("flame_tree_planks",()->new BlockItem(BlockList.FLAME_TREE_PLANKS_BLOCK.get(), new Item.Properties()));
-    public static final RegistryObject<Item>FLAME_TREE_WOOD_BLOCK_ITEM=ITEMS.register("flame_tree_wood",()->new BlockItem(BlockList.FLAME_TREE_WOOD_BLOCK.get(), new Item.Properties()));
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }

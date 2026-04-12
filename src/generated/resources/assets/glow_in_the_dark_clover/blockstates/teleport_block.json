@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "glow_in_the_dark_clover:block/teleport_block"
+    }
+  }
+}

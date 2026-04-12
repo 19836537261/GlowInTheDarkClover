@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "glow_in_the_dark_clover:block/flame_tree_door_bottom",
+    "top": "glow_in_the_dark_clover:block/flame_tree_door_top"
+  }
+}

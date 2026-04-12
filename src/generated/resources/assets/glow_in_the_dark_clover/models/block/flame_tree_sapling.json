@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "glow_in_the_dark_clover:block/flame_tree_sapling"
+  }
+}

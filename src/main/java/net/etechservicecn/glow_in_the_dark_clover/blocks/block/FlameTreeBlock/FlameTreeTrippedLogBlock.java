@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FlameTreeTrippedLogBlock extends RotatedPillarBlock {
     public FlameTreeTrippedLogBlock(Properties p_55926_) {
-        super(p_55926_.requiresCorrectToolForDrops());
+        super(p_55926_.requiresCorrectToolForDrops().strength(10.0f));
     }
 
     @Override

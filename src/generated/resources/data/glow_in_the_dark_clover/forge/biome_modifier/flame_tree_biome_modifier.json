@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "glow_in_the_dark_clover:fire_land_biome",
+  "features": "glow_in_the_dark_clover:flame_tree_place_feature",
+  "step": "vegetal_decoration"
+}

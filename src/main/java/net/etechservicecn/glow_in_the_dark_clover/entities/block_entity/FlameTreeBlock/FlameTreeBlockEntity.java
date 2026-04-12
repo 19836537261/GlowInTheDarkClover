@@ -1,6 +1,7 @@
 package net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.FlameTreeBlock;
 
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -98,7 +99,7 @@ public class FlameTreeBlockEntity extends BlockEntity {
                 BlockPos running_pos=dequeue();
                 int real_height=base_height+randomSource.nextInt(rand_a,rand_a+1)+randomSource.nextInt(rand_b,rand_b+1);
                 for (int i = 0; i < real_height; i++) {
-                    level.setBlock(running_pos.above(i), BlockList.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                    level.setBlock(running_pos.above(i), flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
                 }
                 BlockPos center=running_pos.above(real_height-1);
                 fill_leaves(level,center,radius);
@@ -130,8 +131,8 @@ public class FlameTreeBlockEntity extends BlockEntity {
         for (int x = -radius+1; x < radius; x++) {
             for (int z = -radius+1; z < radius; z++) {
                 BlockPos blockPos=fill_pos.offset(x,0,z);
-                if (!level.getBlockState(blockPos).is(BlockList.FLAME_TREE_LOG_BLOCK.get())){
-                    level.setBlock(blockPos,BlockList.FLAME_TREE_LEAVES_BLOCK.get().defaultBlockState(),Block.UPDATE_ALL);
+                if (!level.getBlockState(blockPos).is(flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get())){
+                    level.setBlock(blockPos, flameTreePackageInfo.FLAME_TREE_LEAVES_BLOCK.get().defaultBlockState(),Block.UPDATE_ALL);
                 }
             }
         }

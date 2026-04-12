@@ -2,6 +2,7 @@ package net.etechservicecn.glow_in_the_dark_clover.creative_tabs;
 
 import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
+import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -25,18 +26,14 @@ public class TabList {
             .title(Component.translatable("creative_tab.block")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(BlockList.FIRE_DIRT_BLOCK.get());
                 p_259752_.accept(BlockList.TELEPORT_SCHEDULER_BLOCK.get());
-                p_259752_.accept(BlockList.FLAME_TREE_LOG_BLOCK.get());
-                p_259752_.accept(BlockList.FLAME_TREE_WOOD_BLOCK.get());
-                p_259752_.accept(BlockList.FLAME_TREE_TRIPPED_LOG_BLOCK.get());
-                p_259752_.accept(BlockList.FLAME_TREE_PLANKS_BLOCK.get());
-                p_259752_.accept(BlockList.FLAME_TREE_LEAVES_BLOCK.get());
+                flameTreePackageInfo.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(p_259752_::accept);
             })).build());
     public static final RegistryObject<CreativeModeTab>ITEM_TAB=TABS.register("item_tab",()-> CreativeModeTab.builder()
             .icon(()->new ItemStack(ItemList.FIRE_WORLD_TOKEN.get()))
             .title(Component.translatable("creative_tab.item")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(ItemList.FIRE_WORLD_TOKEN.get());
-                p_259752_.accept(ItemList.FLAME_TREE_SAPLING_BLOCK_ITEM.get());
-                p_259752_.accept(ItemList.FLAME_TREE_STICK_ITEM.get());
+                p_259752_.accept(flameTreePackageInfo.FLAME_TREE_SAPLING_BLOCK_ITEM.get());
+                p_259752_.accept(flameTreePackageInfo.FLAME_TREE_STICK_ITEM.get());
             })).build());
 
 
