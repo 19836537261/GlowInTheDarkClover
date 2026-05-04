@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 public class FireBurnWorldTags {
     public static class Blocks{
         public static final TagKey<Block>CAN_INFINITE_BURN_BLOCK=create("can_infinite_burn_block");
+
         public static final TagKey<Block>FLAME_TREE_FARMLAND=create("flame_tree_farmland");
         public static TagKey<Block>create(String name){
             return BlockTags.create(new ResourceLocation(name));
@@ -22,6 +23,7 @@ public class FireBurnWorldTags {
         public static final TagKey<Item>BUILD_DIAMOND_WEAPON_MATERIALS=create("build_diamond_weapon_materials");
         public static final TagKey<Item>BUILD_GOLDEN_WEAPON_MATERIALS=create("build_golden_weapon_materials");
         public static final TagKey<Item>BUILD_IRON_WEAPON_MATERIALS=create("build_iron_weapon_materials");
+        public static final TagKey<Item>BUILD_CRAFTING_TABLE_MATERIALS=create("build_crafting_table_materials");
         public static final TagKey<Item>STICK_MATERIALS=create("stick_materials");
         public static TagKey<Item>create(String name){
             return ItemTags.create(new ResourceLocation(name));

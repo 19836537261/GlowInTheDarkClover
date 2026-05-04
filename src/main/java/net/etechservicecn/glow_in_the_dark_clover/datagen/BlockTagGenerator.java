@@ -42,6 +42,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
                 flameTreePackageInfo.FLAME_TREE_DOOR_BLOCK,
                 flameTreePackageInfo.FLAME_TREE_TRAP_DOOR_BLOCK,
                 flameTreePackageInfo.FLAME_TREE_PLANKS_BLOCK);
+
     }
     private void add_building_block_tags(RegistryObject<? extends Block>log_block,
                                          RegistryObject<? extends Block>leaves_block,

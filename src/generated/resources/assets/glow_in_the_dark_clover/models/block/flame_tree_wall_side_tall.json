@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_wall_side_tall",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "wall": "glow_in_the_dark_clover:block/flame_tree_planks"
-  }
-}

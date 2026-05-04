@@ -1,15 +1,18 @@
 package net.etechservicecn.glow_in_the_dark_clover.datagen;
 
+import net.etechservicecn.glow_in_the_dark_clover.StartModApplication;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.items.ItemList;
 import net.etechservicecn.glow_in_the_dark_clover.tags.FireBurnWorldTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -101,10 +104,12 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(consumer);
     }
     private void build_from_planks_to_crafting_table(Block plank_block,Consumer<FinishedRecipe>consumer){
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,Items.CRAFTING_TABLE,1)
-                .requires(plank_block.asItem(),4)
-                .unlockedBy(getHasName(plank_block.asItem()),has(plank_block.asItem()))
-                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,Items.CRAFTING_TABLE,1)
+                .pattern("##")
+                .pattern("##")
+                .define('#',plank_block.asItem())
+                .unlockedBy(getHasName(plank_block),has(plank_block))
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_crafting_table"));
     }
 
     private void build_from_planks_to_sticks(Block plank_block,Item stick_item,Consumer<FinishedRecipe>consumer){
@@ -154,8 +159,9 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(consumer);
     }
     private void build_from_planks_to_pressure_plate(Block plank_block,Block pressure_plate_block,Consumer<FinishedRecipe>consumer){
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,pressure_plate_block.asItem(),1)
-                .requires(plank_block.asItem(),2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,pressure_plate_block.asItem(),1)
+                .pattern("##")
+                .define('#',plank_block.asItem())
                 .unlockedBy(getHasName(plank_block.asItem()),has(plank_block.asItem()))
                 .save(consumer);
     }
@@ -204,7 +210,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('1', materials)
                 .unlockedBy(getHasName(stick_item),has(stick_item))
                 .unlockedBy(materials.location().getPath(),has(materials))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_"+sword.getDescriptionId()));
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,axe)
                 .pattern("11 ")
                 .pattern("1# ")
@@ -213,7 +219,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('1', materials)
                 .unlockedBy(getHasName(stick_item),has(stick_item))
                 .unlockedBy(materials.location().getPath(),has(materials))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_"+axe.getDescriptionId()));
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,hoe)
                 .pattern("11 ")
                 .pattern(" # ")
@@ -222,7 +228,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('1', materials)
                 .unlockedBy(getHasName(stick_item),has(stick_item))
                 .unlockedBy(materials.location().getPath(),has(materials))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_"+hoe.getDescriptionId()));
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,shovel)
                 .pattern(" 1 ")
                 .pattern(" # ")
@@ -231,7 +237,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('1', materials)
                 .unlockedBy(getHasName(stick_item),has(stick_item))
                 .unlockedBy(materials.location().getPath(),has(materials))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_"+shovel.getDescriptionId()));
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,pickaxe)
                 .pattern("111")
                 .pattern(" # ")
@@ -240,7 +246,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('1', materials)
                 .unlockedBy(getHasName(stick_item),has(stick_item))
                 .unlockedBy(materials.location().getPath(),has(materials))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_"+pickaxe.getDescriptionId()));
     }
     private void build_from_stick_to_misc(TagKey<Item>stick_tag,Consumer<FinishedRecipe>consumer){
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC,Items.BOW)
@@ -251,7 +257,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('T', Items.STRING)
                 .unlockedBy(stick_tag.location().getPath(),has(stick_tag))
                 .unlockedBy(getHasName(Items.STRING),has(Items.STRING))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_bow"));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC,Items.ARROW)
                 .pattern("#")
                 .pattern("T")
@@ -262,7 +268,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .unlockedBy(getHasName(Items.FLINT),has(Items.FLINT))
                 .unlockedBy(stick_tag.location().getPath(),has(stick_tag))
                 .unlockedBy(getHasName(Items.FEATHER),has(Items.FEATHER))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_arrow"));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC,Items.FISHING_ROD)
                 .pattern("  S")
                 .pattern(" ST")
@@ -271,6 +277,6 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('T',Items.STRING)
                 .unlockedBy(stick_tag.location().getPath(),has(stick_tag))
                 .unlockedBy(getHasName(Items.STRING),has(Items.STRING))
-                .save(consumer);
+                .save(consumer,new ResourceLocation(StartModApplication.MODID,"mod_fishing_rod"));
     }
 }

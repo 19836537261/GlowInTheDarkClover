@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button_pressed",
-  "textures": {
-    "texture": "glow_in_the_dark_clover:block/flame_tree_planks"
-  }
-}

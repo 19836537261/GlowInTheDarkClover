@@ -19,6 +19,7 @@ public class LangGenerator extends LanguageProvider {
     protected void addTranslations() {
         this.add(ItemList.FIRE_LAUNCHER.get(),"火焰权杖");
         this.add(ItemList.FIRE_WORLD_TOKEN.get(),"火焰令牌");
+        this.add(ItemList.ITEM_SCEPTER_ITEM.get(), "物品权杖");
 
         this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
         this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
@@ -35,6 +36,9 @@ public class LangGenerator extends LanguageProvider {
         this.addAdvancement("fire_world_root","浴火焚身","使用烈焰粉和纸合成火焰令牌。");
         this.addAdvancement("fire_world_activate_portal","火焰门","使用火焰令牌激活传送门框架");
         this.addAdvancement("fire_world_entrance","初入火焰世界","通过火焰传送门进入火焰维度");
+
+        this.addItemContainerTitle(ItemList.ITEM_SCEPTER_ITEM,"物品列表(按E键退出)");
+
         this.addTreeTranslation(flameTreePackageInfo.FLAME_TREE_LOG_BLOCK.get(),
                 flameTreePackageInfo.FLAME_TREE_LEAVES_BLOCK.get(),
                 flameTreePackageInfo.FLAME_TREE_SAPLING_BLOCK.get(),
@@ -60,6 +64,9 @@ public class LangGenerator extends LanguageProvider {
     private void addAdvancement(String title_key,String title,String desc){
         this.add("advancement."+title_key+".title",title);
         this.add("advancement."+title_key+".desc",desc);
+    }
+    private void addItemContainerTitle(RegistryObject<Item>itemRegistryObject,String description){
+        this.add("container.item."+itemRegistryObject.getId().getPath()+".title",description);
     }
     private void addTreeTranslation(Block log_block,
                                     Block leaves_block,

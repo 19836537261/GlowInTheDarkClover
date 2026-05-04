@@ -19,6 +19,7 @@ public class TabList {
             .icon(()->new ItemStack(ItemList.FIRE_LAUNCHER.get()))
             .title(Component.translatable("creative_tab.weapon")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(ItemList.FIRE_LAUNCHER.get());
+                p_259752_.accept(ItemList.ITEM_SCEPTER_ITEM.get());
             }))
             .build());
     public static final RegistryObject<CreativeModeTab>BLOCK_TAB=TABS.register("block_tab",()-> CreativeModeTab.builder()

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "glow_in_the_dark_clover:block/flame_tree_log_tb",
-    "side": "glow_in_the_dark_clover:block/flame_tree_log_side",
-    "top": "glow_in_the_dark_clover:block/flame_tree_log_tb"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "glow_in_the_dark_clover:block/flame_tree_wood"
-  }
-}
