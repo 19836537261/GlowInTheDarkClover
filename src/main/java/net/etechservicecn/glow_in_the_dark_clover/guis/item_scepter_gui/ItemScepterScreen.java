@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import org.lwjgl.glfw.GLFW;
 
 public class ItemScepterScreen extends AbstractContainerScreen<ItemScepterMenu> {
     public static final ResourceLocation ITEM_SCEPTER_GUI_RESOURCE=new ResourceLocation(StartModApplication.MODID,"textures/gui/item/item_container.png");
@@ -69,7 +70,8 @@ public class ItemScepterScreen extends AbstractContainerScreen<ItemScepterMenu> 
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (keyCode==ESC_KEY_CODE||keyCode==E_KEY_CODE){
+
+        if (keyCode==GLFW.GLFW_KEY_ESCAPE||keyCode==GLFW.GLFW_KEY_E){
             this.minecraft.player.closeContainer();
             this.onClose();
             return true;

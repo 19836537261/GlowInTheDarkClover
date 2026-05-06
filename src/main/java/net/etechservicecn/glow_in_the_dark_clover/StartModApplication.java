@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.BlockList;
 import net.etechservicecn.glow_in_the_dark_clover.blocks.block.FlameTreeBlock.flameTreePackageInfo;
 import net.etechservicecn.glow_in_the_dark_clover.entities.BlockEntityTypeList;
+import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.EntityList;
 import net.etechservicecn.glow_in_the_dark_clover.events.ModConfigEvent;
 import net.etechservicecn.glow_in_the_dark_clover.creative_tabs.TabList;
 import net.etechservicecn.glow_in_the_dark_clover.guis.MenuList;
@@ -48,6 +49,7 @@ public class StartModApplication
         FoliagePlacerList.register(modEventBus);
         flameTreePackageInfo.register(modEventBus);
         MenuList.register(modEventBus);
+        EntityList.register(modEventBus);
         //BiomeList.register();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
