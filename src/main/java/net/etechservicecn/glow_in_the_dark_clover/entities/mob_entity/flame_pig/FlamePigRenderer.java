@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class FlamePigRenderer extends MobRenderer<FlamePigEntity,FlamePigModel<FlamePigEntity>> {
     public FlamePigRenderer(EntityRendererProvider.Context p_174304_) {
-        super(p_174304_, new FlamePigModel<>(p_174304_.bakeLayer(EntityLayerList.FLAME_PIG_LAYER)), 1.0f);
+        super(p_174304_, new FlamePigModel<>(p_174304_.bakeLayer(EntityLayerList.FLAME_PIG_LAYER)), 0.5f);
     }
 
     @Override

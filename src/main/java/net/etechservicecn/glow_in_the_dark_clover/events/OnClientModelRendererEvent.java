@@ -8,6 +8,8 @@ import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.Teleport
 import net.etechservicecn.glow_in_the_dark_clover.entities.block_entity.TeleportSchedulerBlock.TeleportSchedulerBlockEntityRenderer;
 import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.EntityLayerList;
 import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.EntityList;
+import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.flame_chicken.FlameChickenModel;
+import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.flame_chicken.FlameChickenRenderer;
 import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.flame_pig.FlamePigEntity;
 import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.flame_pig.FlamePigModel;
 import net.etechservicecn.glow_in_the_dark_clover.entities.mob_entity.flame_pig.FlamePigRenderer;
@@ -41,10 +43,12 @@ public class OnClientModelRendererEvent {
     @SubscribeEvent
     public static void register_layer(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(EntityLayerList.FLAME_PIG_LAYER, FlamePigModel::createBodyLayer);
+        event.registerLayerDefinition(EntityLayerList.FLAME_CHICKEN_LAYER, FlameChickenModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void bind_entities(FMLClientSetupEvent event){
         EntityRenderers.register(EntityList.FLAME_PIG_ENTITY.get(), FlamePigRenderer::new);
+        EntityRenderers.register(EntityList.FLAME_CHICKEN_ENTITY.get(), FlameChickenRenderer::new);
     }
 
 }

@@ -25,6 +25,7 @@ public class ItemModelDataGenerator extends ItemModelProvider {
         registerBlockItem(ItemList.FIRE_DIRT_BLOCK_ITEM);
         registerBlockItem(ItemList.TELEPORT_SCHEDULER_BLOCK_ITEM);
         registerBlockItem(ItemList.TELEPORT_BLOCK_ITEM);
+        registerSpawnEggItem(ItemList.FLAME_PIG_SPAWN_ITEM);
 
         registerBuildingBlockItems(
                 flameTreePackageInfo.FLAME_TREE_LOG_BLOCK_ITEM,
@@ -64,6 +65,9 @@ public class ItemModelDataGenerator extends ItemModelProvider {
     }
     private void registerTrapDoorBlock(RegistryObject<Item>blockItem){
         getBuilder(blockItem.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modLoc("block/"+blockItem.getId().getPath()+"_bottom")));
+    }
+    private void registerSpawnEggItem(RegistryObject<Item>spawn_item){
+        this.withExistingParent(spawn_item.getId().getPath(),mcLoc("item/template_spawn_egg"));
     }
     private void registerBuildingBlockItems(RegistryObject<Item>log_block,
                                             RegistryObject<Item>leaves_block,

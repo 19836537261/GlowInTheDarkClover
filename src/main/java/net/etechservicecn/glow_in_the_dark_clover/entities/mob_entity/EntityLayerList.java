@@ -5,5 +5,6 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
 public class EntityLayerList {
-    public static final ModelLayerLocation FLAME_PIG_LAYER=new ModelLayerLocation(new ResourceLocation(StartModApplication.MODID,""),"main");
+    public static final ModelLayerLocation FLAME_PIG_LAYER=new ModelLayerLocation(new ResourceLocation(StartModApplication.MODID,"flame_pig_layer"),"main");
+    public static final ModelLayerLocation FLAME_CHICKEN_LAYER=new ModelLayerLocation(new ResourceLocation(StartModApplication.MODID,"flame_chicken_layer"),"main");
 }

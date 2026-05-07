@@ -36,6 +36,12 @@ public class TabList {
                 p_259752_.accept(flameTreePackageInfo.FLAME_TREE_SAPLING_BLOCK_ITEM.get());
                 p_259752_.accept(flameTreePackageInfo.FLAME_TREE_STICK_ITEM.get());
             })).build());
+    public static final RegistryObject<CreativeModeTab>SPAWN_EGG_TAB=TABS.register("spawn_egg",()-> CreativeModeTab.builder()
+            .icon(()->new ItemStack(ItemList.FLAME_PIG_SPAWN_ITEM.get()))
+            .title(Component.translatable("creative_tab.spawn_egg")).displayItems(((p_270258_, p_259752_) -> {
+                p_259752_.accept(ItemList.FLAME_PIG_SPAWN_ITEM.get());
+            }))
+            .build());
 
 
 

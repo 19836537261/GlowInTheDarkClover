@@ -20,6 +20,7 @@ public class LangGenerator extends LanguageProvider {
         this.add(ItemList.FIRE_LAUNCHER.get(),"火焰权杖");
         this.add(ItemList.FIRE_WORLD_TOKEN.get(),"火焰令牌");
         this.add(ItemList.ITEM_SCEPTER_ITEM.get(), "物品权杖");
+        this.add(ItemList.FLAME_PIG_SPAWN_ITEM.get(), "烈焰猪刷怪蛋");
 
         this.add(BlockList.FIRE_DIRT_BLOCK.get(),"火焰泥土");
         this.add(BlockList.TELEPORT_SCHEDULER_BLOCK.get(),"任意传送门");
@@ -27,6 +28,8 @@ public class LangGenerator extends LanguageProvider {
         this.add("creative_tab.weapon", "GITDC武器");
         this.add("creative_tab.block","GITDC方块");
         this.add("creative_tab.item","GITDC物品");
+        this.add("creative_tab.spawn_egg","GITDC刷怪蛋");
+
         this.addItemTranslate(ItemList.FIRE_LAUNCHER,"点击鼠标右键即可发射火焰");
         this.addItemTranslate(ItemList.FIRE_WORLD_TOKEN,"使用该物品去激活火焰世界维度吧");
         this.addBlockTranslate(BlockList.FIRE_DIRT_BLOCK,"看起来是岩浆和草方块的结合体。。。");
