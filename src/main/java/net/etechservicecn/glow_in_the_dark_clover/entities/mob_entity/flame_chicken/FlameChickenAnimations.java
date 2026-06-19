@@ -22,7 +22,7 @@ public class FlameChickenAnimations {
 		))
 		.build();
 
-	public static final AnimationDefinition swing_rotate = AnimationDefinition.Builder.withLength(1.0F).looping()
+	public static final AnimationDefinition swing_rotate = AnimationDefinition.Builder.withLength(1.0F)
 		.addAnimation("wing0", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
 			new Keyframe(0.0F, KeyframeAnimations.degreeVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR),
 			new Keyframe(0.25F, KeyframeAnimations.degreeVec(0.0F, 0.0F, 70.0F), AnimationChannel.Interpolations.LINEAR),

@@ -26,6 +26,7 @@ public class ItemModelDataGenerator extends ItemModelProvider {
         registerBlockItem(ItemList.TELEPORT_SCHEDULER_BLOCK_ITEM);
         registerBlockItem(ItemList.TELEPORT_BLOCK_ITEM);
         registerSpawnEggItem(ItemList.FLAME_PIG_SPAWN_ITEM);
+        registerSpawnEggItem(ItemList.FLAME_CHICKEN_SPAWN_ITEM);
 
         registerBuildingBlockItems(
                 flameTreePackageInfo.FLAME_TREE_LOG_BLOCK_ITEM,

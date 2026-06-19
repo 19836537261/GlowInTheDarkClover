@@ -11,6 +11,7 @@ import net.etechservicecn.glow_in_the_dark_clover.items.item.ItemScepterItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,6 +26,7 @@ public class ItemList {
     public static final RegistryObject<Item>TELEPORT_BLOCK_ITEM=ITEMS.register("teleport_block",()->new BlockItem(BlockList.TELEPORT_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item>ITEM_SCEPTER_ITEM=ITEMS.register("item_scepter",()->new ItemScepterItem(new Item.Properties()));
     public static final RegistryObject<Item>FLAME_PIG_SPAWN_ITEM=ITEMS.register("flame_pig_spawn_egg",()->new ForgeSpawnEggItem(()->EntityList.FLAME_PIG_ENTITY.get(),0xEC9090,0xE91B1B,new Item.Properties()));
+    public static final RegistryObject<Item>FLAME_CHICKEN_SPAWN_ITEM=ITEMS.register("flame_chicken_spawn_egg",()->new ForgeSpawnEggItem(()->EntityList.FLAME_CHICKEN_ENTITY.get(),0xD8D0D0,0XCB2323,new Item.Properties()));
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }

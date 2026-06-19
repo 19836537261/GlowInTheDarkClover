@@ -40,6 +40,7 @@ public class TabList {
             .icon(()->new ItemStack(ItemList.FLAME_PIG_SPAWN_ITEM.get()))
             .title(Component.translatable("creative_tab.spawn_egg")).displayItems(((p_270258_, p_259752_) -> {
                 p_259752_.accept(ItemList.FLAME_PIG_SPAWN_ITEM.get());
+                p_259752_.accept(ItemList.FLAME_CHICKEN_SPAWN_ITEM.get());
             }))
             .build());
 
