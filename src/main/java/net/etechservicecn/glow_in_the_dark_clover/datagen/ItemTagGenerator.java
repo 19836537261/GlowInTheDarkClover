@@ -47,6 +47,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
                 .add(flameTreePackageInfo.FLAME_TREE_STICK_ITEM.get());
         this.tag(FireBurnWorldTags.Items.BUILD_CRAFTING_TABLE_MATERIALS)
                 .add(flameTreePackageInfo.FLAME_TREE_PLANKS_BLOCK_ITEM.get());
+        this.tag(FireBurnWorldTags.Items.FLAME_CHICKEN_ATES)
+                .add(Items.BEETROOT_SEEDS)
+                .add(Items.WHEAT_SEEDS)
+                .add(Items.MELON_SEEDS)
+                .add(Items.PUMPKIN_SEEDS)
+                .add(Items.TORCHFLOWER_SEEDS);
+
     }
     private void addBuildingTags(Block stair_block,Block slab_block){
         this.tag(ItemTags.STAIRS).add(stair_block.asItem());

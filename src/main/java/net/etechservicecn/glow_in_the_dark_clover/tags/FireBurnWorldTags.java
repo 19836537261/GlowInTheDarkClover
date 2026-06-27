@@ -24,6 +24,7 @@ public class FireBurnWorldTags {
         public static final TagKey<Item>BUILD_GOLDEN_WEAPON_MATERIALS=create("build_golden_weapon_materials");
         public static final TagKey<Item>BUILD_IRON_WEAPON_MATERIALS=create("build_iron_weapon_materials");
         public static final TagKey<Item>BUILD_CRAFTING_TABLE_MATERIALS=create("build_crafting_table_materials");
+        public static final TagKey<Item>FLAME_CHICKEN_ATES=create("flame_chicken_ates");
         public static final TagKey<Item>STICK_MATERIALS=create("stick_materials");
         public static TagKey<Item>create(String name){
             return ItemTags.create(new ResourceLocation(name));
